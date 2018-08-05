@@ -1,0 +1,113 @@
+div(id="faq")
+  // ++++++++++++++++++++++
+  .card(data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne")
+    .q-header(id="headingOne")
+      .question
+        | Не активна кнопка "Оплатить", поле для ввода информации подсвечивается красным. Что делать чтобы завершить регистрацию?
+    .collapse.show(id="collapseOne" aria-labelledby="headingOne" data-parent="#faq")
+      .answer
+        | Рекомендуем проверить наличие пробелов перед введенным текстом. Удалите пробелы и кнопка станет активной.
+  // ++++++++++++++++++++++
+  .card.collapsed(data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo")
+    .q-header(id="headingTwo")
+      .question
+        | У меня нет возможности оплатить участие картой, возможно ли произвести оплату иными способами?
+    .collapse(id="collapseTwo" aria-labelledby="headingTwo" data-parent="#faq")
+      .answer
+        | Да, конечно! В этом случае необходимо написать на электронную почту проекта
+        | <a href="mailto:prokachshow@gmail.com" onclick="event.stopPropagation();">prokachshow@gmail.com<a/> для предварительной регистрации и выбора удобного способа оплаты
+  // ++++++++++++++++++++++
+  .card.collapsed(data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3")
+    .q-header(id="heading3")
+      .question
+        | Можно ли оплатить участие частями?
+    .collapse(id="collapse3" aria-labelledby="heading3" data-parent="#faq")
+      .answer
+        | К сожалению, в настоящее время возможность рассрочки при оплате программ не предусмотрена.
+  // ++++++++++++++++++++++
+  .card.collapsed(data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4")
+    .q-header(id="heading4")
+      .question
+        | В настоящее время я живу не на территории Российской Федерации, могу ли я стать участницей проекта?
+    .collapse(id="collapse4" aria-labelledby="heading4" data-parent="#faq")
+      .answer
+        | Конечно! В онлайн проекте PROкачSHOW может принять участие девушка из любого уголка планеты! Регистрация через сайт сейчас возможна для стран, перечень которых указан по <a href="https://www.instagram.com/p/BiUwKLGDbvv/" onclick="event.stopPropagation();">ссылке<a/>. В списке нет твоей страны? Сообщи нам об этом по почте <a href="mailto:prokachshow@gmail.com" onclick="event.stopPropagation();">prokachshow@gmail.com<a/> и мы обязательно это исправим или предложим иной способ регистрации на программу!
+
+  div.rest-of-faq
+    // ++++++++++++++++++++++
+    .card.collapsed(data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5")
+      .q-header(id="heading5")
+        .question
+          | Можно ли участвовать в конкурсе, если я проживаю в небольшом населенном пункте (нет спортивного зала, трудно достать какие-либо специальные продукты питания и т.п.)?
+      .collapse(id="collapse5" aria-labelledby="heading3" data-parent="#faq")
+        .answer
+          | Конечно да! Участницей может стать любая девушка, имеющая смартфон или компьютер с доступом в интернет. Приобретение специальных продуктов не потребуется, в меню используются самые обычные продукты питания.
+    // ++++++++++++++++++++++
+    .card.collapsed(data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6")
+      .q-header(id="heading6")
+        .question У меня нет возможности ходить в тренажерный зал. Могу ли я тренироваться дома?
+      .collapse(id="collapse6" aria-labelledby="heading6" data-parent="#faq")
+        .answer
+          | Конечно, программами предусмотрены тренировки для выполнения дома. 70% участниц результатов достигает исключительно в домашних условиях.
+    // ++++++++++++++++++++++
+    .card.collapsed(data-toggle="collapse" data-target="#collapse7" aria-expanded="true" aria-controls="collapse7")
+      .q-header(id="heading7")
+        .question Для домашних тренировок необходимо иметь какое-то специальное оборудование?
+      .collapse(id="collapse7" aria-labelledby="heading7" data-parent="#faq")
+        .answer
+          | Есть базовые элементарные снаряды, с которыми было бы удобнее заниматься, это: утяжелители на ноги 1,5-2,5 кг – 2шт, гантели по 2,5 кг – 2шт., блин 10 кг, коврик-пенка, ящик для зашагиваний высотой по колено. Но если нет возможности их приобрести, пользоваться можно домашним инвентарем (мебель, бутылки с водой, пакеты с крупами и т.д. и т.п.)
+    // ++++++++++++++++++++++
+    .card.collapsed(data-toggle="collapse" data-target="#collapse8" aria-expanded="true" aria-controls="collapse8")
+      .q-header(id="heading8")
+        .question Какие добавки, спортивное или функциональное питание необходимо будет принимать?
+      .collapse(id="collapse8" aria-labelledby="heading8" data-parent="#faq")
+        .answer
+          | В наших программах предусмотрены только обычные продукты питания и поливитамины, продающиеся в любой аптеке.
+    // ++++++++++++++++++++++
+    .card.collapsed(data-toggle="collapse" data-target="#collapse9" aria-expanded="true" aria-controls="collapse9")
+      .q-header(id="heading9")
+        .question
+          | На сколько ограничено меню, не буду ли я голодать?
+      .collapse(id="collapse9" aria-labelledby="heading9" data-parent="#faq")
+        .answer
+          | Первое время вам будет сложно перестроиться, но разнообразное меню и его регулярное обновление помогут не чувствовать себя голодным. Есть вам придётся часто, голодать не будете точно!
+    // ++++++++++++++++++++++
+    .card.collapsed(data-toggle="collapse" data-target="#collapse10" aria-expanded="true" aria-controls="collapse10")
+      .q-header(id="heading10")
+        .question
+          | Я мало ем, как быть в этом случае?
+      .collapse(id="collapse10" aria-labelledby="heading10" data-parent="#faq")
+        .answer
+          | Разгонять обмен веществ))) Просто будете делить приемы пищи на более мелкие порции и есть чаще.
+    // ++++++++++++++++++++++
+    .card.collapsed(data-toggle="collapse" data-target="#collapse11" aria-expanded="true" aria-controls="collapse11")
+      .q-header(id="heading11")
+        .question
+          | Как быть если из предложенного меню мне ничего не подойдет?
+      .collapse(id="collapse11" aria-labelledby="heading11" data-parent="#faq")
+        .answer
+          | Такого просто не может быть, так как в меню несколько вариантов на каждый прием пищи. Кроме того, мы на связи и всегда можно всё подкорректировать.
+    // ++++++++++++++++++++++
+    .card.collapsed(data-toggle="collapse" data-target="#collapse12" aria-expanded="true" aria-controls="collapse12")
+      .q-header(id="heading12")
+        .question
+          | Мне не нужно худеть, смогу ли я за месяц набрать мышечную массу?
+      .collapse(id="collapse12" aria-labelledby="heading12" data-parent="#faq")
+        .answer
+          | Для участниц, имеющих дефицит массы тела (в случае если ваш текущий вес меньше, чем рост минус 114) у нас предусмотрена программа «Малышка на миллион» продолжительностью 2 месяца.
+    // ++++++++++++++++++++++
+    .card.collapsed(data-toggle="collapse" data-target="#collapse13" aria-expanded="true" aria-controls="collapse13")
+      .q-header(id="heading13")
+        .question
+          | Очень хочу принять участие в проекте, но у меня есть медицинские показания, ограничивающие физические нагрузки (серьезные диагнозы или элементы остеосинтеза (штифты, пластины, винты и т.п. после повреждений)), можно ли мне принять участие?
+      .collapse(id="collapse13" aria-labelledby="heading13" data-parent="#faq")
+        .answer
+          | Да, можно, у нас существуют программы лечебно-оздоровительного характера. При этом мы рекомендуем пройти консультацию у вашего лечащего врача, для получения заключения и рекомендаций к физическим нагрузкам.
+    // ++++++++++++++++++++++
+    .card.collapsed(data-toggle="collapse" data-target="#collapse14" aria-expanded="true" aria-controls="collapse14")
+      .q-header(id="heading14")
+        .question
+          | Как осуществляется контроль участниц?
+      .collapse(id="collapse14" aria-labelledby="heading3" data-parent="#faq")
+        .answer
+          | Контроль динамики изменений ведется по обязательным фотографиям ДО и ПОСЛЕ, еженедельным замерам веса и объёмов тела.

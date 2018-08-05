@@ -1,0 +1,729 @@
+html
+  head
+    meta(charset='utf-8')
+    meta(name='keywords', content='здоровье онлайн школа перемен прокач шоу красивое тело женский здоровый образ жизни правильное питание')
+    meta(name='description', content='Школа перемен PROкачSHOW – это уникальный проект,\
+ в рамках которого проводится конкурс преображения, где мы учим каждую участницу быть\
+ красивой, здоровой, счастливой и нацеленной на успех во всех сферах жизни. Быть, а\
+ не казаться – это главный девиз нашего проекта! Поэтому, если твой возраст от 18 до 55 лет,\
+ ты хочешь красивое тело, вести здоровый образ жизни, научиться правильно ухаживать\
+ за собой и полностью перезагрузиться, то тебе к нам!')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=0')
+    title PROKA4SHOW
+    link(rel="shortcut icon" type="image/png" href="landing/favicon.png")
+    link(
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css")
+    link(href="landing/styles.css" rel="stylesheet")
+  body
+    // Yandex.Metrika counter
+    script(type='text/javascript').
+      (function (d, w, c) {
+        (w[c] = w[c] || []).push(function () {
+          try {
+            w.yaCounter48541388 = new Ya.Metrika({
+              id: 48541388,
+              clickmap: true,
+              trackLinks: true,
+              accurateTrackBounce: true
+            });
+          } catch (e) {
+          }
+        });
+        var n = d.getElementsByTagName("script")[0],
+          s = d.createElement("script"),
+          f = function () {
+            n.parentNode.insertBefore(s, n);
+          };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+        if (w.opera == "[object Opera]") {
+          d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+          f();
+        }
+      })(document, window, "yandex_metrika_callbacks");
+    noscript
+      div
+        img(src='https://mc.yandex.ru/watch/48541388', style='position:absolute; left:-9999px;', alt='')
+    // /Yandex.Metrika counter
+    .preloader
+      .loader-wrap
+        .loader Loading...
+    .full-wrap.hidden
+      .mob-menu-button.jsMobMenuItem
+        svg(viewbox='0 0 24 24')
+          g
+            path(d='M24,3c0-0.6-0.4-1-1-1H1C0.4,2,0,2.4,0,3v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V3z')
+            path(d='M24,11c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V11z')
+            path(d='M24,19c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V19z')
+      .mob-menu#mobMenu
+        .jsMobMenuItem.mob-menu-item.totop В начало страницы
+        .jsMobMenuItem.mob-menu-item.scrollToTeachers Преподаватели проекта
+        .jsMobMenuItem.mob-menu-item.scrollToFaq Частые вопросы
+        .jsMobMenuItem.mob-menu-item.scrollToFooter Контакты
+        .jsMobMenuItem.mob-menu-item(data-toggle="modal" data-target="#letterModal") Тебе письмо!
+        .mob-menu-but-wrap
+          .jsMobMenuItem.mob-menu-item-button.scrollToPay Я готова меняться!
+      // =============== NAVIGATION ===============
+      //.navigation-mob
+      .navigation
+        .container
+          .logo.totop
+            img.logo-img(src="landing/img/logo.png")
+            .slogan Онлайн школа перемен для женщин
+          .menu
+            .menu-item.scrollToTeachers Преподаватели проекта
+            //.menu-item Полезные материалы
+            .menu-item.scrollToFaq Частые вопросы
+            .menu-item.last.scrollToFooter Контакты
+            .pk-button.scrollToPay Я готова меняться!
+      // =============== MAIN ===============
+      .main
+        .main-lines
+        .container
+          .main-wrapper
+            //.letter.animated.fadeInRightBig
+            .letterBut.animated.bounceInDown(data-toggle="modal" data-target="#letterModal")
+              span 1
+              svg.animated.pulse.infinite(x='0px', y='0px', viewbox='0 0 512 512')
+                g
+                  g
+                    path(d='M507.49,101.721L352.211,256L507.49,410.279c2.807-5.867,4.51-12.353,4.51-19.279V121\
+                    C512,114.073,510.297,107.588,507.49,101.721z')
+                g
+                  g
+                    path(d='M467,76H45c-6.927,0-13.412,1.703-19.279,4.51l198.463,197.463c17.548,17.548,46.084,17.548,63.632,0L486.279,80.51\
+                    C480.412,77.703,473.927,76,467,76z')
+                g
+                  g
+                    path(d='M4.51,101.721C1.703,107.588,0,114.073,0,121v270c0,6.927,1.703,13.413,4.51,19.279L159.789,256L4.51,101.721z')
+                g
+                  g
+                    path(d='M331,277.211l-21.973,21.973c-29.239,29.239-76.816,29.239-106.055,0L181,277.211L25.721,431.49\
+                    C31.588,434.297,38.073,436,45,436h422c6.927,0,13.412-1.703,19.279-4.51L331,277.211z')
+            img.mob-logo-img(src="landing/img/logo.png")
+            .main-girls.animated.fadeInRightBig
+              img(src="landing/img/main-girls3.png")
+            .main-info.animated.fadeInLeftBig
+              .company-name Prokaчshow
+              .main-school Онлайн конкурс преображения, в котором вы приобретёте не только красивое тело, но и новый взгляд на жизнь
+              .main-but-wrap
+                .s-but.s-but_main.scrollToPay Я готова меняться!
+                .mbw-text
+                  span(style="margin-right: 5px;") Сделай первый шаг
+                  svg.mbw-arr(viewBox="0 0 129 129")
+                    g
+                    path(d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z")
+                  svg.mbw-arr(viewBox="0 0 129 129")
+                    g
+                    path(d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z")
+                  svg.mbw-arr(viewBox="0 0 129 129")
+                    g
+                    path(d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z")
+              .season-start
+                svg(width="34.156" height="34.1" viewBox="0 0 34.156 34.1")
+                  path(d="M520.993,1011.91a6.031,6.031,0,0,0,1.066-4.51,3.536,3.536,0,0,0-5.952-2.34,16.968,16.968,0,0,0-1.831-1.35,6.144,6.144,0,0,0-2.693-2.32,3.942,3.942,0,0,0-3.222-.06,17.46,17.46,0,0,0-6.551,0,3.944,3.944,0,0,0-3.223.06,6.154,6.154,0,0,0-2.695,2.32,17.168,17.168,0,0,0-1.831,1.35,3.536,3.536,0,0,0-5.952,2.34,6.04,6.04,0,0,0,1.066,4.51A17.062,17.062,0,1,0,520.993,1011.91Zm-15.908,21.81a15.63,15.63,0,0,1-14.843-20.56,63,63,0,0,0,6.88,4.92c0.153-.17,5.46-5.89,6.644-8.7,1.264-3.02.794-5.32-.387-6.82l-0.026-.02a15.058,15.058,0,0,1,3.465,0l-0.027.02c-1.18,1.5-1.65,3.8-.386,6.82,1.184,2.81,6.49,8.53,6.643,8.7a62.838,62.838,0,0,0,6.878-4.92A15.63,15.63,0,0,1,505.085,1033.72Zm8.632-13.38a49.406,49.406,0,0,0-17.265,0,1.185,1.185,0,0,0-1.036,1.18c0,4.13,3.191,8.3,9.668,8.3s9.67-4.17,9.67-8.3A1.188,1.188,0,0,0,513.717,1020.34Zm-0.686,2.16c-0.03.25-.078,0.55-0.15,0.88-0.081.36-.149,0.53-0.72,0.46-1.092-.13-13.062-0.13-14.154,0-0.571.07-.639-0.1-0.72-0.46-0.072-.33-0.12-0.63-0.151-0.88-0.051-.43-0.006-0.72.73-0.85a45.98,45.98,0,0,1,14.435,0C513.038,1021.78,513.082,1022.07,513.031,1022.5Z" transform="translate(-488 -1001.03)")
+                span Начинай преображаться прямо сейчас!
+      // =============== ABOUT ===============
+      .black-block.main-mobile
+        svg.wave-top(x="0px" y="0px" viewBox="63.4 484.8 2580.6 109.7")
+          path(d="M504.4,519.7c328.3,44.9,470,6.7,596-3.8c126-10.5,298.4-5.5,475.7,31.5s390,56.1,598.1-24.1c208.1-80.2,330.8-16.2,469.8,20.4c0,33.2-0.6,10.9-0.6,51.9c-715.1-2.9-2258.7-0.2-2579.4,0.8c0-28.1-0.6-27.1-0.6-39.7C142.6,522.2,287.1,490.1,504.4,519.7z")
+        .container
+          .company-name Prokaчshow
+          .main-mobile-title Онлайн конкурс преображения, в котором вы приобретёте не только красивое тело, но и новый взгляд на жизнь
+          .s-but.s-but_main.scrollToPay Я готова меняться!
+      // =============== ABOUT ===============
+      .white-block
+        include tmps/wave
+        .container
+          .about-wrap
+            .row
+              .col-md-6.col-lg-6.text-center
+                //.about-left(data-toggle="modal" data-target="#videoPresentation")
+                .about-left
+                  //img.arr-desc(src=require("./img/arr-desc.png"))
+                  //.desc Самое интересное в видео!
+                  .about-img
+                    .about-img-ovl
+                    img(src="landing/img/about1.jpg")
+                    //.play
+                  .about-prize
+                    .about-prize__title Призовой фонд:
+                    .about-prize__sum 1 000 000 <span class="rub">₽</span>
+                    //.about-prize__notice Забери свой миллион
+              .col-md-6.col-lg-6
+                .about-right
+                  .about-ball.top
+                  .about-ball.bottom
+                  h2 Школа перемен<br/> для женщин
+                  //p.light
+                    | Школа перемен PROкачSHOW – это уникальный проект, в рамках которого проводится конкурс преображения,
+                    | где мы учим каждую участницу быть красивой, здоровой, счастливой и нацеленной на успех во всех сферах жизни.
+                  p.light Онлайн конкурс преображения PROкачSHOW – это онлайн проект, не имеющий аналогов! В рамках конкурса преображения, где мы разыграем ценные призы, мы научим каждую участницу быть красивой, здоровой, счастливой и нацеленной на успех во всех сферах жизни. В проекте PROкачSHOW семейная атмосфера, поддержка 24/7, море нужной и полезной информации гармонично сочетаются со спортивным азартом и полной трансформацией каждой участницы. Тебя не бросят разбираться самой со своими проблемами, а поддержат и направят в сторону здорового и счастливого будущего, помогут справиться с ленью, расскажут действенные способы улучшения отношений с родными и близкими и многое другое. Приходи к нам и становись лучшей версией себя!
+                  .awards
+                    img.awards__icon(src="landing/img/diamond.png")
+                    .awards__text
+                      .awards__name ProKaчShow
+                      | - Победитель Международной премии <br/> «Aurora Diamond Award-2017»
+                  .button.drop-shadow.scrollToPay Я хочу выиграть миллион!
+      // =============== BENEFITS ===============
+      .black-block
+        .black-block__background
+          .rounds.top
+          .rounds.bottom
+        .black-block__content
+          .container
+            .benefits
+              .text-center
+                h3.ben-head Что тебя ждёт в проекте:
+                .row
+                  .col-md-6.col-lg-4
+                    .benefit
+                      .benefits-block.style1
+                        .ben-title Спортивная<br/> семья
+                        .ben-img-wrap
+                          .ben-img(style="background-image: url('landing/img/ben12.jpg')")
+                      .ben-notice Поддержка мотиватора и общение с участниками проекта 24/7
+                  .col-md-6.col-lg-4
+                    .benefit
+                      .benefits-block.style2
+                        .ben-title Индивидуальный<br/> подход
+                        .ben-img-wrap
+                          .ben-img(style="background-image: url('landing/img/ben21.jpg')")
+                      .ben-notice Подберём программу питания и тренировок с учетом твоих индивидуальных особенностей
+                  .col-md-6.col-lg-4
+                    .benefit
+                      .benefits-block.style3
+                        .ben-title Азарт и<br/> мотивация
+                        .ben-img-wrap
+                          .ben-img(style="background-image: url('landing/img/ben31.jpg')")
+                      .ben-notice Спортивные задания для поддержки боевого духа и спортивного азарта
+                  .col-md-6.col-lg-4
+                    .benefit
+                      .benefits-block.style4
+                        .ben-title Креативные<br/> задания
+                        .ben-img-wrap
+                          .ben-img(style="background-image: url('landing/img/ben42.jpg')")
+                      .ben-notice Поможем выйти из зоны комфорта, развить твои таланты и выиграть специальный приз
+                  .col-md-6.col-lg-4
+                    .benefit
+                      .benefits-block.style5
+                        .ben-title Персональное<br/> обучение
+                        .ben-img-wrap
+                          .ben-img(style="background-image: url('landing/img/ben211.jpg')")
+                      .ben-notice Лекции и мастер-классы для всестороннего развития на самые различные темы
+                  .col-md-6.col-lg-4
+                    .benefit
+                      .benefits-block.style6
+                        .ben-title Полная<br/> трансформация
+                        .ben-img-wrap
+                          //.ben-img(style="background-image: url(" + require("./img/ben6.jpg") + ")")
+                          .ben-img.ben-animate
+                      .ben-notice Поможем изменить не только твоё тело, но и образ мыслей.
+      // =============== PRIZES ===============
+      .white-block
+        include tmps/wave
+        .container
+          .prizes
+            h3.text-center Наши партнёры и главные призы
+            .sub-title Тебя ждёт много интересного!
+            .places
+              .main-prize
+                .place 1 место &mdash;
+                .main-prize-sum Денежный приз
+                //.main-prize-sum 1 000 000 <span class="rub">₽</span>
+                //.main-prize-take Денежный приз
+              .prize-item.prize1
+                .place 2 место &mdash;
+                .prize-img(style="background-image: url('landing/img/prize11.jpg')")
+                .prize-name Пластическая операция на выбор
+              .prize-item.prize2
+                .place 3 место &mdash;
+                .prize-img(style="background-image: url('landing/img/prize22.jpg')")
+                .prize-name Белоснежные виниры
+              .prize-item.prize3
+                .place 4.5 место &mdash;
+                .prize-img(style="background-image: url('landing/img/prize31.jpg')")
+                .prize-name Обучение в индустрии спорта и красоты
+              .prize-item.prize4
+                .place Самая<br/> креативная &mdash;
+                .prize-img(style="background-image: url('landing/img/prize4.jpg')")
+                .prize-name Обучение на телеведущую в останкино
+      // =============== TEACHERS ===============
+      .teachers#teachers
+        .teachers-background
+          .teacher-rounds.top
+          .teacher-rounds.bottom
+          .container
+            .teachers-head
+              h3.text-center Организатор проекта
+              .sub-title Поможем развить твои таланты!
+            .teacher-row.left
+              .teacher-block
+                .daria-left
+                  .teacher-contacts
+                    .teacher-img-wrap
+                      .teacher-img(style="background-image: url('landing/img/ben1.jpg')")
+                    .teacher-icons-wrap
+                      a.teacher-icon(href="https://www.instagram.com/dasha__pirozhkova/" target="_blank")
+                        svg(x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve")
+                          g
+                            g
+                              path(d="M352,0H160C71.648,0,0,71.648,0,160v192c0,88.352,71.648,160,160,160h192c88.352,0,160-71.648,160-160V160C512,71.648,440.352,0,352,0z M464,352c0,61.76-50.24,112-112,112H160c-61.76,0-112-50.24-112-112V160C48,98.24,98.24,48,160,48h192c61.76,0,112,50.24,112,112V352z")
+                          g
+                            g
+                              path(d="M256,128c-70.688,0-128,57.312-128,128s57.312,128,128,128s128-57.312,128-128S326.688,128,256,128z M256,336c-44.096,0-80-35.904-80-80c0-44.128,35.904-80,80-80s80,35.872,80,80C336,300.096,300.096,336,256,336z")
+                          g
+                            g
+                              circle(cx="393.6" cy="118.4" r="17.056")
+                      a.teacher-icon(href="https://vk.com/piroghkova" target="_blank")
+                        svg(x="0px" y="0px" width="31.334px" height="31.334px" viewBox="0 0 31.334 31.334")
+                          g
+                            path(d="M30.109,24.707c-0.167,0.021-0.335,0.047-0.503,0.048c-1.647,0.003-3.294-0.001-4.94,0.005c-0.229,0.001-0.423-0.084-0.593-0.221c-0.344-0.281-0.698-0.558-1.015-0.87c-0.824-0.817-1.627-1.657-2.445-2.482c-0.255-0.257-0.527-0.494-0.795-0.737c-0.139-0.131-0.313-0.159-0.493-0.156c-0.241,0.006-0.44,0.115-0.535,0.338c-0.087,0.202-0.159,0.421-0.182,0.637c-0.04,0.391-0.042,0.784-0.05,1.175c-0.009,0.438-0.022,0.879-0.145,1.305c-0.055,0.188-0.133,0.379-0.23,0.549c-0.17,0.292-0.438,0.451-0.779,0.458c-1.438,0.033-2.877,0.054-4.313-0.04c-0.266-0.02-0.511-0.104-0.748-0.221c-1.34-0.658-2.517-1.532-3.54-2.622c-1.245-1.325-2.375-2.746-3.505-4.167c-1.521-1.916-2.836-3.966-4.018-6.104c-0.432-0.779-0.849-1.569-1.159-2.408c-0.153-0.414-0.153-0.829-0.038-1.246c0.033-0.124,0.092-0.245,0.16-0.354C0.34,7.434,0.491,7.345,0.684,7.341C0.752,7.34,0.823,7.338,0.891,7.338c1.494,0,2.986,0.006,4.479-0.005C5.665,7.331,5.891,7.43,6.089,7.63C6.457,7.998,6.743,8.427,7,8.873c0.28,0.486,0.56,0.975,0.807,1.479c0.543,1.109,1.209,2.143,1.914,3.151c0.344,0.491,0.716,0.963,1.073,1.444c0.166,0.224,0.396,0.309,0.661,0.316c0.258,0.009,0.363-0.096,0.373-0.354c0.003-0.062,0.002-0.123,0.002-0.185c0-1.686,0-3.37-0.002-5.055c0-0.131,0-0.263-0.013-0.393c-0.03-0.301-0.189-0.477-0.487-0.535c-0.135-0.026-0.273-0.038-0.41-0.056c-0.42-0.055-0.594-0.233-0.638-0.655c-0.065-0.637,0.24-1.134,0.837-1.357c0.257-0.096,0.523-0.117,0.795-0.116c1.331,0.002,2.662,0,3.993,0.001c0.27,0,0.54-0.014,0.808,0.01c0.281,0.027,0.565,0.064,0.838,0.144c0.582,0.168,0.919,0.564,0.985,1.174c0.017,0.146,0.021,0.292,0.021,0.438c0.002,1.023,0.002,2.046,0.002,3.069c0,1.085-0.001,2.17,0.002,3.255c0,0.106,0.009,0.217,0.038,0.318c0.095,0.329,0.453,0.438,0.754,0.231c0.887-0.611,1.469-1.462,1.917-2.409c0.414-0.875,0.771-1.777,1.16-2.664c0.311-0.703,0.63-1.402,0.955-2.099c0.079-0.173,0.196-0.33,0.305-0.488c0.099-0.142,0.229-0.204,0.412-0.204c1.933,0.006,3.862,0.005,5.794,0.003c0.473,0,0.848,0.192,1.143,0.551c0.104,0.128,0.147,0.278,0.174,0.443c0.115,0.761-0.146,1.424-0.51,2.063c-0.345,0.604-0.755,1.161-1.201,1.69c-0.924,1.094-1.83,2.201-2.622,3.396c-0.204,0.307-0.378,0.634-0.564,0.951c-0.137,0.232-0.119,0.455,0.053,0.662c0.349,0.42,0.687,0.852,1.054,1.253c0.872,0.956,1.766,1.889,2.643,2.84c0.281,0.306,0.535,0.634,0.796,0.958c0.086,0.107,0.15,0.232,0.234,0.341C31.751,23.33,30.935,24.598,30.109,24.707z")
+                      a.teacher-icon(href="mailto:piroghkova82@gmail.com")
+                        svg(x="0px" y="0px" width="485.211px" height="485.211px" viewBox="0 0 485.211 485.211")
+                          g
+                            path(d="M485.211,363.906c0,10.637-2.992,20.498-7.785,29.174L324.225,221.67l151.54-132.584c5.895,9.355,9.446,20.344,9.446,32.219V363.906z M242.606,252.793l210.863-184.5c-8.653-4.737-18.397-7.642-28.908-7.642H60.651c-10.524,0-20.271,2.905-28.889,7.642L242.606,252.793z M301.393,241.631l-48.809,42.734c-2.855,2.487-6.41,3.729-9.978,3.729c-3.57,0-7.125-1.242-9.98-3.729l-48.82-42.736L28.667,415.23c9.299,5.834,20.197,9.329,31.983,9.329h363.911c11.784,0,22.687-3.495,31.983-9.329L301.393,241.631z M9.448,89.085C3.554,98.44,0,109.429,0,121.305v242.602c0,10.637,2.978,20.498,7.789,29.174l153.183-171.44L9.448,89.085z")
+                .daria-right
+                  .teacher-main
+                    h2.teachers-header Даша Пирожкова
+                    .teacher-info
+                      p
+                        | Дипломированный тренер, сертифицированный специалист в области диетологии, спортивной эндокринологии и психологии отношений
+                      p
+                        | Основатель Школы Перемен для Женщин "PROкачSHOW" и руководитель Женского Направления Национального Антинаркотического Союза.
+                    a.button.dark.drop-shadow(href="https://api.whatsapp.com/send?phone=79119838780" target="_blank")
+                      svg.q-but-icon(x='0px', y='0px', viewbox='0 0 90 90')
+                        g
+                          path(d='M90,43.841c0,24.213-19.779,43.841-44.182,43.841c-7.747,0-15.025-1.98-21.357-5.455L0,90l7.975-23.522\
+                          c-4.023-6.606-6.34-14.354-6.34-22.637C1.635,19.628,21.416,0,45.818,0C70.223,0,90,19.628,90,43.841z M45.818,6.982\
+                          c-20.484,0-37.146,16.535-37.146,36.859c0,8.065,2.629,15.534,7.076,21.61L11.107,79.14l14.275-4.537\
+                          c5.865,3.851,12.891,6.097,20.437,6.097c20.481,0,37.146-16.533,37.146-36.857S66.301,6.982,45.818,6.982z M68.129,53.938\
+                          c-0.273-0.447-0.994-0.717-2.076-1.254c-1.084-0.537-6.41-3.138-7.4-3.495c-0.993-0.358-1.717-0.538-2.438,0.537\
+                          c-0.721,1.076-2.797,3.495-3.43,4.212c-0.632,0.719-1.263,0.809-2.347,0.271c-1.082-0.537-4.571-1.673-8.708-5.333\
+                          c-3.219-2.848-5.393-6.364-6.025-7.441c-0.631-1.075-0.066-1.656,0.475-2.191c0.488-0.482,1.084-1.255,1.625-1.882\
+                          c0.543-0.628,0.723-1.075,1.082-1.793c0.363-0.717,0.182-1.344-0.09-1.883c-0.27-0.537-2.438-5.825-3.34-7.977\
+                          c-0.902-2.15-1.803-1.792-2.436-1.792c-0.631,0-1.354-0.09-2.076-0.09c-0.722,0-1.896,0.269-2.889,1.344\
+                          c-0.992,1.076-3.789,3.676-3.789,8.963c0,5.288,3.879,10.397,4.422,11.113c0.541,0.716,7.49,11.92,18.5,16.223\
+                          C58.2,65.771,58.2,64.336,60.186,64.156c1.984-0.179,6.406-2.599,7.312-5.107C68.398,56.537,68.398,54.386,68.129,53.938z')
+                      span Задать вопрос Даше
+            //.teacher-row.right
+              .teacher-block
+                .sasha-left
+                  .teacher-main
+                    h2.teachers-header Александра Липовая
+                    .teacher-info
+                      p
+                        | Известный блоггер, фотомодель, барбер BlackStar-13, стилист-визажист 13-Beauty by black star, личный стилист Тимати. Специалист по тренингам красоты для женщин. Модель.
+                        | Супруга Александра Липового, трехкратного чемпиона Мира по кигбоксингу. Профессионально увлекается боксом.
+                    a.button.dark.drop-shadow(href="mailto:sasha.kabaeva.93@list.ru")
+                      svg.q-but-icon.q-but-icon_mail(x="0px" y="0px" width="485.211px" height="485.211px" viewBox="0 0 485.211 485.211")
+                        g
+                          path(d="M485.211,363.906c0,10.637-2.992,20.498-7.785,29.174L324.225,221.67l151.54-132.584c5.895,9.355,9.446,20.344,9.446,32.219V363.906z M242.606,252.793l210.863-184.5c-8.653-4.737-18.397-7.642-28.908-7.642H60.651c-10.524,0-20.271,2.905-28.889,7.642L242.606,252.793z M301.393,241.631l-48.809,42.734c-2.855,2.487-6.41,3.729-9.978,3.729c-3.57,0-7.125-1.242-9.98-3.729l-48.82-42.736L28.667,415.23c9.299,5.834,20.197,9.329,31.983,9.329h363.911c11.784,0,22.687-3.495,31.983-9.329L301.393,241.631z M9.448,89.085C3.554,98.44,0,109.429,0,121.305v242.602c0,10.637,2.978,20.498,7.789,29.174l153.183-171.44L9.448,89.085z")
+                      span Задать вопрос Саше
+                .sasha-right
+                  .teacher-contacts
+                    .teacher-img-wrap
+                      .teacher-img(style="background-image: url(" + require("./img/teacher21.jpg") + ")")
+                    .teacher-icons-wrap
+                      a.teacher-icon(href="https://www.instagram.com/sashakabaeva_official/" target="_blank")
+                        svg(x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve")
+                          g
+                            g
+                              path(d="M352,0H160C71.648,0,0,71.648,0,160v192c0,88.352,71.648,160,160,160h192c88.352,0,160-71.648,160-160V160C512,71.648,440.352,0,352,0z M464,352c0,61.76-50.24,112-112,112H160c-61.76,0-112-50.24-112-112V160C48,98.24,98.24,48,160,48h192c61.76,0,112,50.24,112,112V352z")
+                          g
+                            g
+                              path(d="M256,128c-70.688,0-128,57.312-128,128s57.312,128,128,128s128-57.312,128-128S326.688,128,256,128z M256,336c-44.096,0-80-35.904-80-80c0-44.128,35.904-80,80-80s80,35.872,80,80C336,300.096,300.096,336,256,336z")
+                          g
+                            g
+                              circle(cx="393.6" cy="118.4" r="17.056")
+                      a.teacher-icon(href="https://vk.com/a.kabaeva1993" target="_blank")
+                        svg(x="0px" y="0px" width="31.334px" height="31.334px" viewBox="0 0 31.334 31.334")
+                          g
+                            path(d="M30.109,24.707c-0.167,0.021-0.335,0.047-0.503,0.048c-1.647,0.003-3.294-0.001-4.94,0.005c-0.229,0.001-0.423-0.084-0.593-0.221c-0.344-0.281-0.698-0.558-1.015-0.87c-0.824-0.817-1.627-1.657-2.445-2.482c-0.255-0.257-0.527-0.494-0.795-0.737c-0.139-0.131-0.313-0.159-0.493-0.156c-0.241,0.006-0.44,0.115-0.535,0.338c-0.087,0.202-0.159,0.421-0.182,0.637c-0.04,0.391-0.042,0.784-0.05,1.175c-0.009,0.438-0.022,0.879-0.145,1.305c-0.055,0.188-0.133,0.379-0.23,0.549c-0.17,0.292-0.438,0.451-0.779,0.458c-1.438,0.033-2.877,0.054-4.313-0.04c-0.266-0.02-0.511-0.104-0.748-0.221c-1.34-0.658-2.517-1.532-3.54-2.622c-1.245-1.325-2.375-2.746-3.505-4.167c-1.521-1.916-2.836-3.966-4.018-6.104c-0.432-0.779-0.849-1.569-1.159-2.408c-0.153-0.414-0.153-0.829-0.038-1.246c0.033-0.124,0.092-0.245,0.16-0.354C0.34,7.434,0.491,7.345,0.684,7.341C0.752,7.34,0.823,7.338,0.891,7.338c1.494,0,2.986,0.006,4.479-0.005C5.665,7.331,5.891,7.43,6.089,7.63C6.457,7.998,6.743,8.427,7,8.873c0.28,0.486,0.56,0.975,0.807,1.479c0.543,1.109,1.209,2.143,1.914,3.151c0.344,0.491,0.716,0.963,1.073,1.444c0.166,0.224,0.396,0.309,0.661,0.316c0.258,0.009,0.363-0.096,0.373-0.354c0.003-0.062,0.002-0.123,0.002-0.185c0-1.686,0-3.37-0.002-5.055c0-0.131,0-0.263-0.013-0.393c-0.03-0.301-0.189-0.477-0.487-0.535c-0.135-0.026-0.273-0.038-0.41-0.056c-0.42-0.055-0.594-0.233-0.638-0.655c-0.065-0.637,0.24-1.134,0.837-1.357c0.257-0.096,0.523-0.117,0.795-0.116c1.331,0.002,2.662,0,3.993,0.001c0.27,0,0.54-0.014,0.808,0.01c0.281,0.027,0.565,0.064,0.838,0.144c0.582,0.168,0.919,0.564,0.985,1.174c0.017,0.146,0.021,0.292,0.021,0.438c0.002,1.023,0.002,2.046,0.002,3.069c0,1.085-0.001,2.17,0.002,3.255c0,0.106,0.009,0.217,0.038,0.318c0.095,0.329,0.453,0.438,0.754,0.231c0.887-0.611,1.469-1.462,1.917-2.409c0.414-0.875,0.771-1.777,1.16-2.664c0.311-0.703,0.63-1.402,0.955-2.099c0.079-0.173,0.196-0.33,0.305-0.488c0.099-0.142,0.229-0.204,0.412-0.204c1.933,0.006,3.862,0.005,5.794,0.003c0.473,0,0.848,0.192,1.143,0.551c0.104,0.128,0.147,0.278,0.174,0.443c0.115,0.761-0.146,1.424-0.51,2.063c-0.345,0.604-0.755,1.161-1.201,1.69c-0.924,1.094-1.83,2.201-2.622,3.396c-0.204,0.307-0.378,0.634-0.564,0.951c-0.137,0.232-0.119,0.455,0.053,0.662c0.349,0.42,0.687,0.852,1.054,1.253c0.872,0.956,1.766,1.889,2.643,2.84c0.281,0.306,0.535,0.634,0.796,0.958c0.086,0.107,0.15,0.232,0.234,0.341C31.751,23.33,30.935,24.598,30.109,24.707z")
+                      a.teacher-icon(href="mailto:sasha.kabaeva.93@list.ru")
+                        svg(x="0px" y="0px" width="485.211px" height="485.211px" viewBox="0 0 485.211 485.211")
+                          g
+                            path(d="M485.211,363.906c0,10.637-2.992,20.498-7.785,29.174L324.225,221.67l151.54-132.584c5.895,9.355,9.446,20.344,9.446,32.219V363.906z M242.606,252.793l210.863-184.5c-8.653-4.737-18.397-7.642-28.908-7.642H60.651c-10.524,0-20.271,2.905-28.889,7.642L242.606,252.793z M301.393,241.631l-48.809,42.734c-2.855,2.487-6.41,3.729-9.978,3.729c-3.57,0-7.125-1.242-9.98-3.729l-48.82-42.736L28.667,415.23c9.299,5.834,20.197,9.329,31.983,9.329h363.911c11.784,0,22.687-3.495,31.983-9.329L301.393,241.631z M9.448,89.085C3.554,98.44,0,109.429,0,121.305v242.602c0,10.637,2.978,20.498,7.789,29.174l153.183-171.44L9.448,89.085z")
+      // =============== MAP BLOCK ===============
+      .white-block
+        include tmps/wave
+        .container
+          .map-block-wrap
+            .row
+              .col-lg-5.order-2.order-lg-1
+                h2 Наши участницы со всего мира!
+                .head-divider
+                .map-info
+                  p <b>Наши участницы не ограничиваются местоположением и приходят к нам с таких стран, как:</b>&#8194;
+                    | Белорусия, Германия, Дания, Израиль, Казахстан, Канада, Киргизия, Китай, Латвия, Литва, Молдавия, Нидерланды,
+                    | ОАЭ, Польша, Румыния, Словакия, Словения, Тайланд, Узбекистан, Украина, Финляндия, Франция,
+                    | Хорватия, Черногория, Чехия, Швеция, Швейцария, Шри-Ланка и Эстония!
+                .button.dark.drop-shadow.scrollToPay Я хочу участвовать!
+              .col-lg-7.order-1.order-lg-2
+                .map-wrap
+                  .map-rounds
+                  include tmps/map
+                  .map-label.russia
+                    .map-label__title Россия
+                  .map-label.china
+                    .map-label__title Китай
+                  .map-label.ukraine
+                    .map-label__title Украина
+                  //.map-label.usa
+                    .map-label__title США
+                  .map-label.canada
+                    .map-label__title Канада
+      // =============== REVIEW ===============
+      .reviews
+        .container
+          .reviews-head
+            h3.text-center Инста-отзывы от участниц!
+            .block-head-divider
+          .reviews-bg
+            .reviews-rounds
+          .reviews-slider-wrap
+            img.iphone(src="landing/img/iphone.png")
+            .reviews-slider
+              .reviewSiema
+                //.instaSlide
+                  a(href="https://www.instagram.com/p/BTMlJsPgP9r/?r=wa1" target="_blank")
+                    img.d-block.w-100(src=require("./img/instaReview1.jpg"))
+                .instaSlide
+                  a(href="https://www.instagram.com/p/BUKhuSjFYjM/?r=wa1" target="_blank")
+                    img.d-block.w-100(src="landing/img/instaReview2.jpg")
+                // 9 season
+                .instaSlide
+                  a(href="https://www.instagram.com/p/Bh_8_NWDHoM/?utm_source=ig_share_sheet&igshid=atzyhll4zm51&r=wa1" target="_blank")
+                    img.d-block.w-100(src="landing/img/instaReview3.jpg")
+                    .r-comments#comments9
+                      .reviewReadMore
+                        span Читать все комментарии
+                // 8 season
+                .instaSlide
+                  a(href="https://www.instagram.com/p/BdXF2v8D9c1/?utm_source=ig_share_sheet&igshid=xjwpywtzjhj3&r=wa1" target="_blank")
+                    img.d-block.w-100(src="landing/img/instaReview4.jpg")
+                    .r-comments#comments8
+                      .reviewReadMore
+                        span Читать все комментарии
+                // video
+                .instaSlide
+                  a(href="https://www.instagram.com/p/BglmQOjFf24/?utm_source=ig_share_sheet&igshid=1e3b0llcw69in&r=wa1" target="_blank")
+                    img.d-block.w-100(src="landing/img/instaReview10.jpg")
+                    .reviewReadMore
+                      span Читать все комментарии
+                  .insta-slide-video-wrap#insta-video-wrap
+                    .play-but#play-pause
+                    video.insta-slide-video#insta-video(
+                      poster="https://instagram.fhen2-1.fna.fbcdn.net/vp/d1735f48f694e6e64f784917d11fb5a4/5B3424C5/t51.2885-15/e35/28765987_597557660578865_556789355411144704_n.jpg"
+                      preload="none"
+                      src="https://instagram.fhen2-1.fna.fbcdn.net/vp/23fff2572669fb3e127618f531390a2f/5B3FEE39/t50.2886-16/29148530_557331491317796_2831705081614225189_n.mp4?efg=eyJ1cmxnZW4iOiJ1cmxnZW5fZnJvbV9pZyJ9"
+                      type="video/mp4"
+                      )
+                // 7 season
+                .instaSlide
+                  a(href="https://www.instagram.com/p/BbthtfVj4NK/" target="_blank")
+                    img.d-block.w-100(src="landing/img/instaReview5.jpg")
+                    .r-comments#comments7
+                      .reviewReadMore
+                        span Читать все комментарии
+                // 6 season
+                .instaSlide
+                  a(href="https://www.instagram.com/p/BZd7a3jD8Fm/" target="_blank")
+                    img.d-block.w-100(src="landing/img/instaReview6.jpg")
+                    .r-comments#comments6
+                      .reviewReadMore
+                        span Читать все комментарии
+                // 5 season
+                .instaSlide
+                  a(href="https://www.instagram.com/p/BW91AklDt6v/" target="_blank")
+                    img.d-block.w-100(src="landing/img/instaReview7.jpg")
+                    .r-comments#comments5
+                      .reviewReadMore
+                        span Читать все комментарии
+                // 4 season
+                .instaSlide
+                  a(href="https://www.instagram.com/p/BVMuQ7UD83L/" target="_blank")
+                    img.d-block.w-100(src="landing/img/instaReview8.jpg")
+                    .r-comments#comments4
+                      .reviewReadMore
+                        span Читать все комментарии
+                // 3 season
+                .instaSlide
+                  a(href="https://www.instagram.com/p/BTEFhLKDGNr/" target="_blank")
+                    img.d-block.w-100(src="landing/img/instaReview9.jpg")
+                    .r-comments.comments3#comments3
+                      .reviewReadMore
+                        span Читать все комментарии
+              a.carousel-control-prev.reviewSiema-prev(href="#carouselReviews" role="button" data-slide="prev")
+                svg.slider-arr(viewBox="0 0 129 129")
+                  g
+                    path(d="m88.6,121.3c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2c1.6-1.6 1.6-4.2 0-5.8l-51-51 51-51c1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8,0l-54,53.9c-1.6,1.6-1.6,4.2 0,5.8l54,53.9z")
+                span.sr-only Previous
+              a.carousel-control-next.reviewSiema-next(href="#carouselReviews" role="button" data-slide="next")
+                svg.slider-arr(viewBox="0 0 129 129")
+                  g
+                    path(d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z")
+                span.sr-only Next
+      // =============== PARTNERS ===============
+      .white-block
+        include tmps/wave
+        .container
+          .partners
+            h3.text-center Партнёры проекта
+            .logos
+              a.logo-item(href="http://vpfitness.ru/" target="_blank")
+                img(src="landing/img/partner1.png")
+              //a.logo-item(href="https://www.instagram.com/smilestudio_ss/" target="_blank")
+                img(src=require("./img/partner2.png"))
+              a.logo-item(href="http://mcpo-ostankino.ru/" target="_blank")
+                img(src="landing/img/partner3.png")
+              //a.logo-item(href="https://www.instagram.com/new_face.new_style/" target="_blank")
+                img(src=require("./img/partner4.png"))
+              a.logo-item(href="https://www.doctorfilatov.ru/" target="_blank")
+                img(src="landing/img/partner5.png")
+      // =============== STEPS ===============
+      .black-block
+        .steps-block
+          .container
+            h3.text-center Инструкция по участию в проекте
+            .block-head-divider
+            .sub-title
+              | Хочешь поучаствовать в борьбе за миллион,<br/>
+              | получить иные ценные призы или просто преобразиться?
+            .steps
+              .step-item
+                .step-item__num 1
+                .step-info
+                  .step-item__title Выбери
+                  .step-item__desc программу участия
+              .step-item
+                .step-item__num 2
+                .step-info
+                  .step-item__title Подай
+                  .step-item__desc заявку на участие
+              .step-item
+                .step-item__num 3
+                .step-info
+                  .step-item__title Следуй
+                  .step-item__desc инструкциям в<br/>информационной<br/>рассылке
+              .step-item
+                .step-item__num 4
+                .step-info
+                  .step-item__title Преображайся
+                  .step-item__desc и выигрывай призы!
+      // =============== PROGRAMS ===============
+      .white-block#pay
+        include tmps/wave
+        .container
+          .programs-block
+            h3.text-center Программы участия
+            .block-head-divider
+            .sub-title Набор на 11 сезон. Старт август - сентябрь 2018 года.
+            .row.programs
+              .col-lg-4
+                .program-item
+                  .program-head
+                    .program-icon
+                      svg(x="0px" y="0px" viewBox="0 0 448 448")
+                        g
+                          g
+                            g
+                            path(d="M87.573,197.333c0,29.44,23.893,53.333,53.333,53.333c11.2,0,21.653-3.52,30.187-9.387l-0.427,4.053c0,29.44,23.893,53.333,53.333,53.333s53.333-23.893,53.333-53.333l-0.427-4.053c8.64,5.973,18.987,9.387,30.187,9.387c29.44,0,53.333-23.893,53.333-53.333c0-21.227-12.48-39.467-30.507-48c17.92-8.533,30.507-26.773,30.507-48c0-29.44-23.893-53.333-53.333-53.333c-11.2,0-21.653,3.52-30.187,9.387l0.427-4.053C277.333,23.893,253.44,0,224,0s-53.333,23.893-53.333,53.333l0.427,4.053C162.453,51.413,152.107,48,140.907,48c-29.44,0-53.333,23.893-53.333,53.333c0,21.227,12.48,39.467,30.507,48C100.053,157.867,87.573,176.107,87.573,197.333z M224,96c29.44,0,53.333,23.893,53.333,53.333S253.44,202.667,224,202.667s-53.333-23.893-53.333-53.333S194.56,96,224,96z")
+                            path(d="M32,256c0,106.027,85.973,192,192,192C224,341.973,138.027,256,32,256z")
+                            path(d="M224,448c106.027,0,192-85.973,192-192C309.973,256,224,341.973,224,448z")
+                    .program-name Программа похудения Лайт
+                  .program-body
+                    .program-point Еженедельное обновление меню
+                    .program-point Эффективные экспресс-тренировки и программа питания
+                    .program-point Мотивационная поддержка
+                    .program-point Участие в розыгрыше призов
+                    .program-price 3000 <span class="rub">₽</span>
+                  .button.point.priceBtn(
+                    id="program1"
+                    data-option="Программа похудения Лайт"
+                    data-price="3000"
+                    ) Подать заявку
+                  .program-info-link(data-toggle="modal" data-target="#payMethodsModal") способы оплаты
+              .col-lg-4
+                .program-item
+                  .program-head
+                    .program-icon
+                      svg(x="0px" y="0px" width="459px" height="459px" viewBox="0 0 459 459")
+                        g
+                          g
+                            path(d="M229.5,0C102,0,0,102,0,229.5S102,459,229.5,459c20.4,0,38.25-17.85,38.25-38.25c0-10.2-2.55-17.85-10.2-25.5c-5.1-7.65-10.2-15.3-10.2-25.5c0-20.4,17.851-38.25,38.25-38.25h45.9c71.4,0,127.5-56.1,127.5-127.5C459,91.8,357,0,229.5,0zM89.25,229.5c-20.4,0-38.25-17.85-38.25-38.25S68.85,153,89.25,153s38.25,17.85,38.25,38.25S109.65,229.5,89.25,229.5zM165.75,127.5c-20.4,0-38.25-17.85-38.25-38.25S145.35,51,165.75,51S204,68.85,204,89.25S186.15,127.5,165.75,127.5zM293.25,127.5c-20.4,0-38.25-17.85-38.25-38.25S272.85,51,293.25,51s38.25,17.85,38.25,38.25S313.65,127.5,293.25,127.5zM369.75,229.5c-20.4,0-38.25-17.85-38.25-38.25S349.35,153,369.75,153S408,170.85,408,191.25S390.15,229.5,369.75,229.5z")
+                    .program-name Леди - Классик
+                  .program-body
+                    .program-point Мотивационная поддержка
+                    .program-point Индивидуальные программы питания и тренировок, направленные на улучшение качества тела
+                    .program-point Базовый курс лекций: питание, спорт, психология отношений
+                    .program-point Обсуждение актуальных вопросов с психологами
+                    .program-point Участие в розыгрыше призов
+                    .program-price 5000 <span class="rub">₽</span>
+                  .button.point.priceBtn(
+                    id="program2"
+                    data-option="Леди - Классик"
+                    data-price="5000"
+                    ) Подать заявку
+                  .program-info-link(data-toggle="modal" data-target="#payMethodsModal") способы оплаты
+              .col-lg-4
+                .program-item
+                  .program-head
+                    .program-icon
+                      svg(viewBox="0 0 19.481 19.481")
+                        g
+                          path(d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z")
+                    .program-name Малышка на миллион
+                  .program-body
+                    .program-point Мотивационная поддержка
+                    .program-point Индивидуальная программа питания и тренировок
+                    .program-point Консультации экспертов в области психологии, фитнеса и диетологии
+                    .program-point Расширенный курс вводных лекций: питание, спорт, отношения, целеобразование, сексология, блогинг, медитации.
+                    .program-point Участие в розыгрыше призов
+                    .program-price 7000 <span class="rub">₽</span>
+                  .button.point.priceBtn(
+                    id="program3"
+                    data-option="Малышка на миллион"
+                    data-price="7000"
+                    ) Подать заявку
+                  .program-info-link(data-toggle="modal" data-target="#payMethodsModal") способы оплаты
+                  .program-ribbon Супер!
+      // =============== FAME ===============
+      .black-block
+        .fame-block#fame
+          .container
+            h3.text-center Доска почёта
+            .block-head-divider
+            .fame-slider-wrap
+              .fameSiema
+                  include tmps/fameslides
+              a.carousel-control-prev.fameSiema-prev(href="#carouselFame" role="button" data-slide="prev")
+                svg.slider-arr(viewBox="0 0 129 129")
+                  g
+                    path(d="m88.6,121.3c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2c1.6-1.6 1.6-4.2 0-5.8l-51-51 51-51c1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8,0l-54,53.9c-1.6,1.6-1.6,4.2 0,5.8l54,53.9z")
+                span.sr-only Previous
+              a.carousel-control-next.fameSiema-next(href="#carouselFame" role="button" data-slide="next")
+                svg.slider-arr(viewBox="0 0 129 129")
+                  g
+                    path(d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z")
+                span.sr-only Next
+      // =============== PROGRAMS ===============
+      .white-block.light
+        include tmps/wave
+        .container#actions
+          .news-block
+            h3.text-center Акции и главные новости
+            .block-head-divider
+            .news-slider
+              .news-wrap.newsSiema
+                a.news-item(href="https://www.instagram.com/p/BkQQ1wBldEx/?utm_source=ig_share_sheet&igshid=1gtsqfoww36ld" target="_blank")
+                  img(src="landing/img/news7.jpg")
+                  .news-body
+                    .news-date 20 июня 2018, 22:24
+                    .news-title Международный день борьбы с наркоманией - отмечаем бесплатной тренировкой в Москве!
+                a.news-item(href="https://www.instagram.com/p/BjKCRARlL68/?utm_source=ig_share_sheet&igshid=24hix61ac3w1&r=wa1" target="_blank")
+                  img(src="landing/img/news5.jpg")
+                  .news-body
+                    .news-date 08 июня 2018, 17:16
+                    .news-title Семинар PROкачSHOW в Таллине
+                a.news-item(href="https://www.instagram.com/p/BjutSqJjEAX/?utm_source=ig_share_sheet&igshid=7zi4h7eiftu7&r=wa1" target="_blank")
+                  img(src="landing/img/news6.jpg")
+                  .news-body
+                    .news-date 08 июня 2018, 15:48
+                    .news-title Бесплатная тренировка в Санкт-Петербурге с командой PROкачSHOW
+                a.news-item(href="https://www.instagram.com/p/BjaMOErl741/?r=wa1" target="_blank")
+                  img(src="landing/img/news1.jpg")
+                  .news-body
+                    .news-date 01 июня 2018, 15:10
+                    .news-title Со 2 по 6 июня Прокачшоу на семейном форуме в Сочи
+                a.news-item(href="https://www.instagram.com/p/BikLRiFFVPK/?r=wa1" target="_blank")
+                  img(src="landing/img/news4.jpg")
+                  .news-body
+                    .news-date 09 мая 2018, 22:20
+                    .news-title Прокачшоу и НАС прошли в Бессмертном полку 9 мая
+                a.news-item(href="https://www.instagram.com/p/BiaGYCnl4_v/?r=wa1" target="_blank")
+                  img(src="landing/img/news3.jpg")
+                  .news-body
+                    .news-date 05 мая 2018, 21:00
+                    .news-title Проведена первая благотворительная тренировка
+                a.news-item(href="https://www.instagram.com/p/BiUrAKelzBP/?r=wa1" target="_blank")
+                  img(src="landing/img/news2.jpg")
+                  .news-body
+                    .news-date 03 мая 2018, 19:00
+                    .news-title 5 мая стартуют бесплатные тренировки Прокачшоу в Москве!
+              .news-controls.news-prev
+                svg.slider-arr(viewBox="0 0 129 129")
+                  g
+                    path(d="m88.6,121.3c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2c1.6-1.6 1.6-4.2 0-5.8l-51-51 51-51c1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8,0l-54,53.9c-1.6,1.6-1.6,4.2 0,5.8l54,53.9z")
+                span.sr-only Previous
+              .news-controls.news-next
+                svg.slider-arr(viewBox="0 0 129 129")
+                  g
+                    path(d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z")
+                span.sr-only Next
+      // =============== FAQ ===============
+      .white-block
+        svg.wave-bottom(x="0px" y="0px" viewBox="0 1557.3 2834.6 120.5")
+          path(d="M2350.2,1639.4c-360.6-49.3-516.3-7.4-654.7,4.2s-327.8,6-522.5-34.6c-194.8-40.6-428.4-61.6-657,26.5c-228.6,88.1-363.4,17.8-516-22.4c0-36.5,0.7-12,0.7-57c785.5,3.2,2481.1,0.2,2833.3-0.9c0,30.9,0.7,29.8,0.7,43.6C2747.7,1636.6,2588.9,1671.9,2350.2,1639.4z")
+        .container#faq
+          .faq-block
+            h3.text-center Часто задаваемые вопросы
+            .block-head-divider
+            .sub-title Мы собрали ответы почти на все возможные вопросы.<br/>Но если у тебя возникли трудности, то можешь <a href="mailto:prokachshow@gmail.com">задать вопрос нам лично!<a/>
+
+            .questions-wrap
+              include tmps/faq
+            .faq-footer
+              a.button.point(href="mailto:prokachshow@gmail.com") Задать свой вопрос
+              .show-more Показать еще вопросы
+      // =============== FOOTER ===============
+      .footer#footer
+        .container
+          .row
+            .col-md-4
+              .foot-col
+                img.foot-logo(src="landing/img/foot-logo.png")
+                .foot-block
+                  div <b>ИНН</b> 7722416593
+                  div <b>ОГРН</b> 5177746148069
+                .foot-block
+                  div <b>Адрес:</b>
+                  div 111116, г.Москва, ул. Авиамоторная, д.4, корп.2, пом. IV, комната 2
+                .foot-block
+                  div <b>Моб. телефон:</b>
+                  a(href="tel:+79119838780") 8 (911) 983-87-80
+                .foot-block
+                  div <b>Телефон/Факс:</b>
+                  div 8 (495) 231-49-09
+                .foot-block
+                  div <b>Эл.почта:</b>
+                  a(href="mailto:prokachshow@gmail.com") prokachshow@gmail.com
+            .col-md-4
+              .foot-col
+                .foot-col-title Полезные ссылки
+                .foot-link.scrollToTeachers Преподаватели
+                //.foot-link Советы от школы
+                .foot-link.scrollToActions Акции
+                a.foot-link(href="landing/docs/policy.pdf" target="_blank") Политика защиты и обработки<br/>персональных данных
+                a.foot-link(href="landing/docs/offer.pdf" target="_blank") Оферта
+            .col-md-4
+              .foot-col
+                .foot-col-title Instagram
+                  div.insta-wrap#instafeed
+                  //a(href="https://www.instagram.com/ladyworld_nas/" target="_blank")
+                    img.instafooter(src=require("./img/instafooter.png"))
+      .underFooter
+        span © <span id="currentYear">2018</span> Он-лайн школа перемен для женщин PROкачSHOW
+
+    // ============ SBERBUG =====================
+    .payment-preloader(style='position: fixed;height: 100%;left: 0px;top: 0px;width: 100%;background-color: rgba(27, 27, 27, 0.3);z-index: 100; display: none;')
+      div(style='margin: auto; top: 0px; bottom: 0px; left: 0px; right: 0px; border-radius: 50%; width: 9em; height: 9em; font-size: 8px; position: absolute; text-indent: -9999em; border-width: 1.1em; border-style: solid; border-color: rgb(255, 255, 255) rgb(255, 255, 255) rgb(255, 255, 255) rgb(19, 160, 36); transform: translateZ(0px); animation: load8 1s linear infinite;')
+    script(src="https://securepayments.sberbank.ru/payment/docsite/assets/js/ipay.js")
+
+    // ============ MODALS ======================
+    include tmps/modals
+
+    script(type="text/javascript" src="landing/main.js")
