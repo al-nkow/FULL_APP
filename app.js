@@ -1,5 +1,22 @@
 const express = require('express');
+const minifyHTML = require('express-minify-html');
 const app = express();
+
+app.use(minifyHTML({
+  override:      true,
+  exception_url: false,
+  htmlMinifier: {
+    removeComments:            true,
+    collapseWhitespace:        true,
+    collapseBooleanAttributes: true,
+    removeAttributeQuotes:     true,
+    removeEmptyAttributes:     true,
+    minifyJS:                  true
+  }
+}));
+
+
+
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
@@ -70,8 +87,17 @@ app.get('/admin',function(req,res){
 app.get('/page', function (req, res) {
   res.render('landing/page', { title: 'Hey', message: 'Hello there!'});
 });
+
+
+
+// app.get('/', function (req, res) {
+//   res.render('landing/index', { title: 'Hey', message: 'Hello there!'});
+// });
+
 app.get('/', function (req, res) {
-  res.render('landing/index', { title: 'Hey', message: 'Hello there!'});
+  res.render('landing/index', { title: 'Hey', message: 'Hello there!'}, function(err, html) {
+    res.send(html);
+  });
 });
 
 
