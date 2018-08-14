@@ -32,6 +32,26 @@ const contentRoutes = require('./api/routes/content');
 // mongoose.Promise = Promise;
 mongoose.set('debug', true); // if - !prod
 
+
+
+
+
+
+
+// var address = process.env.MONGO_PORT_27017_TCP_ADDR || '127.0.0.1';
+// var port = process.env.MONGO_PORT_27017_TCP_PORT || '27017';
+// var dbName = process.env.MONGO_DATABASE_NAME || 'hrbase';
+//
+// // Build the connection string
+// var dbURI = `mongodb://${address}:${port}/${dbName}`;
+//
+// // Create the database connection
+// var connection = mongoose.createConnection(dbURI);
+
+
+
+
+
 mongoose.connect('mongodb://localhost:27017/myapi', {
     // useMongoClient: true
 }).catch(err => {
@@ -83,6 +103,9 @@ app.get('/about',function(req,res){
 app.get('/admin',function(req,res){
   res.sendFile(path.join(__dirname+'/public/admin/admin.html'));
 });
+
+
+
 // PUG TEMPLATES ======
 app.get('/page', function (req, res) {
   res.render('landing/page', { title: 'Hey', message: 'Hello there!'});
