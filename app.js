@@ -34,6 +34,10 @@ mongoose.set('debug', true); // if - !prod
 
 
 
+const Content = require('./api/models/content');
+
+
+
 
 
 
@@ -100,8 +104,13 @@ app.use('/content', contentRoutes);
 app.get('/about',function(req,res){
   res.sendFile(path.join(__dirname+'/public/index.html'));
 });
-app.get('/admin',function(req,res){
+app.get('/adminka',function(req,res){
   res.sendFile(path.join(__dirname+'/public/admin/admin.html'));
+});
+
+
+app.get('/admin',function(req,res){
+  res.sendFile(path.join(__dirname+'/public/admin/index.html'));
 });
 
 
@@ -117,11 +126,24 @@ app.get('/page', function (req, res) {
 //   res.render('landing/index', { title: 'Hey', message: 'Hello there!'});
 // });
 
-app.get('/', function (req, res) {
-  res.render('landing/index', { title: 'Hey', message: 'Hello there!'}, function(err, html) {
+
+
+
+// LANDING PAGE
+app.get('/', async (req, res) => {
+  const content = await Content.findOne({ key: 'main_content' }).select('main about');
+  // {main: {info: '...'}, about: {info: '...'}}
+  res.render('landing/index', content, function(err, html) {
     res.send(html);
   });
 });
+
+
+
+
+
+
+
 
 
 // catch 404 and forward to error handler
