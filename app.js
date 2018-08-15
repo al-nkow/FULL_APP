@@ -100,51 +100,19 @@ app.use('/orders', orderRoutes);
 app.use('/user', userRoutes);
 app.use('/content', contentRoutes);
 
-// INDEX.html =========
-app.get('/about',function(req,res){
-  res.sendFile(path.join(__dirname+'/public/index.html'));
-});
-app.get('/adminka',function(req,res){
-  res.sendFile(path.join(__dirname+'/public/admin/admin.html'));
-});
-
-
+// ADMIN PANEL ======
 app.get('/admin',function(req,res){
-  res.sendFile(path.join(__dirname+'/public/admin/index.html'));
+  res.sendFile(path.join(__dirname+'/static/admin/index.html'));
 });
 
-
-
-// PUG TEMPLATES ======
-app.get('/page', function (req, res) {
-  res.render('landing/page', { title: 'Hey', message: 'Hello there!'});
-});
-
-
-
-// app.get('/', function (req, res) {
-//   res.render('landing/index', { title: 'Hey', message: 'Hello there!'});
-// });
-
-
-
-
-// LANDING PAGE
+// LANDING PAGE ======
 app.get('/', async (req, res) => {
-  const content = await Content.findOne({ key: 'main_content' }).select('main about');
+  const content = await Content.findOne({ key: 'main_content' }).select('main about programs');
   // {main: {info: '...'}, about: {info: '...'}}
   res.render('landing/index', content, function(err, html) {
     res.send(html);
   });
 });
-
-
-
-
-
-
-
-
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

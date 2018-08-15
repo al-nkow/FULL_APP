@@ -4,10 +4,14 @@ const contentSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   key: String,
   main: {
-    info: String
+    info: String,
+    sub: String,
   },
   about: {
     info: String
+  },
+  programs: {
+    start: String
   }
 });
 
