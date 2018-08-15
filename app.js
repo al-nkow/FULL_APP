@@ -32,6 +32,30 @@ const contentRoutes = require('./api/routes/content');
 // mongoose.Promise = Promise;
 mongoose.set('debug', true); // if - !prod
 
+
+
+const Content = require('./api/models/content');
+
+
+
+
+
+
+
+// var address = process.env.MONGO_PORT_27017_TCP_ADDR || '127.0.0.1';
+// var port = process.env.MONGO_PORT_27017_TCP_PORT || '27017';
+// var dbName = process.env.MONGO_DATABASE_NAME || 'hrbase';
+//
+// // Build the connection string
+// var dbURI = `mongodb://${address}:${port}/${dbName}`;
+//
+// // Create the database connection
+// var connection = mongoose.createConnection(dbURI);
+
+
+
+
+
 mongoose.connect('mongodb://localhost:27017/myapi', {
     // useMongoClient: true
 }).catch(err => {
@@ -80,9 +104,17 @@ app.use('/content', contentRoutes);
 app.get('/about',function(req,res){
   res.sendFile(path.join(__dirname+'/public/index.html'));
 });
-app.get('/admin',function(req,res){
+app.get('/adminka',function(req,res){
   res.sendFile(path.join(__dirname+'/public/admin/admin.html'));
 });
+
+
+app.get('/admin',function(req,res){
+  res.sendFile(path.join(__dirname+'/public/admin/index.html'));
+});
+
+
+
 // PUG TEMPLATES ======
 app.get('/page', function (req, res) {
   res.render('landing/page', { title: 'Hey', message: 'Hello there!'});
@@ -94,11 +126,24 @@ app.get('/page', function (req, res) {
 //   res.render('landing/index', { title: 'Hey', message: 'Hello there!'});
 // });
 
-app.get('/', function (req, res) {
-  res.render('landing/index', { title: 'Hey', message: 'Hello there!'}, function(err, html) {
+
+
+
+// LANDING PAGE
+app.get('/', async (req, res) => {
+  const content = await Content.findOne({ key: 'main_content' }).select('main about');
+  // {main: {info: '...'}, about: {info: '...'}}
+  res.render('landing/index', content, function(err, html) {
     res.send(html);
   });
 });
+
+
+
+
+
+
+
 
 
 // catch 404 and forward to error handler
