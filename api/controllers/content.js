@@ -4,7 +4,7 @@ const Content = require('../models/content');
 // GET CONTENT
 exports.content_get = async (req, res) => {
   try {
-    const content = await Content.findOne({ key: 'main_content' }).select('main about programs');
+    const content = await Content.findOne({ key: 'main_content' }).select('main about programs benefits prizes teachers contacts');
     res.status(200).json(content);
   } catch (err) {
     return res.status(500).json({ error: err });

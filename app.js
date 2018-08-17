@@ -107,8 +107,8 @@ app.get('/admin',function(req,res){
 
 // LANDING PAGE ======
 app.get('/', async (req, res) => {
-  const content = await Content.findOne({ key: 'main_content' }).select('main about programs');
-  // {main: {info: '...'}, about: {info: '...'}}
+  const content = await Content.findOne({ key: 'main_content' })
+    .select('main about programs benefits prizes teachers contacts');
   res.render('landing/index', content, function(err, html) {
     res.send(html);
   });

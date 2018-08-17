@@ -180,75 +180,75 @@ html
                   .col-md-6.col-lg-4
                     .benefit
                       .benefits-block.style1
-                        .ben-title Спортивная<br/> семья
+                        .ben-title!= benefits.ben1.name
                         .ben-img-wrap
                           .ben-img(style="background-image: url('landing/img/ben12.jpg')")
-                      .ben-notice Поддержка мотиватора и общение с участниками проекта 24/7
+                      .ben-notice= benefits.ben1.body
                   .col-md-6.col-lg-4
                     .benefit
                       .benefits-block.style2
-                        .ben-title Индивидуальный<br/> подход
+                        .ben-title!= benefits.ben2.name
                         .ben-img-wrap
                           .ben-img(style="background-image: url('landing/img/ben21.jpg')")
-                      .ben-notice Подберём программу питания и тренировок с учетом твоих индивидуальных особенностей
+                      .ben-notice= benefits.ben2.body
                   .col-md-6.col-lg-4
                     .benefit
                       .benefits-block.style3
-                        .ben-title Азарт и<br/> мотивация
+                        .ben-title!= benefits.ben3.name
                         .ben-img-wrap
                           .ben-img(style="background-image: url('landing/img/ben31.jpg')")
-                      .ben-notice Спортивные задания для поддержки боевого духа и спортивного азарта
+                      .ben-notice= benefits.ben3.body
                   .col-md-6.col-lg-4
                     .benefit
                       .benefits-block.style4
-                        .ben-title Креативные<br/> задания
+                        .ben-title!= benefits.ben4.name
                         .ben-img-wrap
                           .ben-img(style="background-image: url('landing/img/ben42.jpg')")
-                      .ben-notice Поможем выйти из зоны комфорта, развить твои таланты и выиграть специальный приз
+                      .ben-notice= benefits.ben4.body
                   .col-md-6.col-lg-4
                     .benefit
                       .benefits-block.style5
-                        .ben-title Персональное<br/> обучение
+                        .ben-title!= benefits.ben5.name
                         .ben-img-wrap
                           .ben-img(style="background-image: url('landing/img/ben211.jpg')")
-                      .ben-notice Лекции и мастер-классы для всестороннего развития на самые различные темы
+                      .ben-notice= benefits.ben5.body
                   .col-md-6.col-lg-4
                     .benefit
                       .benefits-block.style6
-                        .ben-title Полная<br/> трансформация
+                        .ben-title!= benefits.ben6.name
                         .ben-img-wrap
                           //.ben-img(style="background-image: url(" + require("./img/ben6.jpg") + ")")
                           .ben-img.ben-animate
-                      .ben-notice Поможем изменить не только твоё тело, но и образ мыслей.
+                      .ben-notice= benefits.ben6.body
       // =============== PRIZES ===============
       .white-block
         include tmps/wave
         .container
           .prizes
-            h3.text-center Наши партнёры и главные призы
-            .sub-title Тебя ждёт много интересного!
+            h3.text-center= prizes.title
+            .sub-title= prizes.subtitle
             .places
               .main-prize
                 .place 1 место &mdash;
-                .main-prize-sum Денежный приз
+                .main-prize-sum= prizes.prize1
                 //.main-prize-sum 1 000 000 <span class="rub">₽</span>
                 //.main-prize-take Денежный приз
               .prize-item.prize1
                 .place 2 место &mdash;
                 .prize-img(style="background-image: url('landing/img/prize11.jpg')")
-                .prize-name Пластическая операция на выбор
+                .prize-name= prizes.prize2
               .prize-item.prize2
                 .place 3 место &mdash;
                 .prize-img(style="background-image: url('landing/img/prize22.jpg')")
-                .prize-name Белоснежные виниры
+                .prize-name= prizes.prize3
               .prize-item.prize3
                 .place 4.5 место &mdash;
                 .prize-img(style="background-image: url('landing/img/prize31.jpg')")
-                .prize-name Обучение в индустрии спорта и красоты
+                .prize-name= prizes.prize4
               .prize-item.prize4
                 .place Самая<br/> креативная &mdash;
                 .prize-img(style="background-image: url('landing/img/prize4.jpg')")
-                .prize-name Обучение на телеведущую в останкино
+                .prize-name= prizes.prize5
       // =============== TEACHERS ===============
       .teachers#teachers
         .teachers-background
@@ -286,12 +286,10 @@ html
                             path(d="M485.211,363.906c0,10.637-2.992,20.498-7.785,29.174L324.225,221.67l151.54-132.584c5.895,9.355,9.446,20.344,9.446,32.219V363.906z M242.606,252.793l210.863-184.5c-8.653-4.737-18.397-7.642-28.908-7.642H60.651c-10.524,0-20.271,2.905-28.889,7.642L242.606,252.793z M301.393,241.631l-48.809,42.734c-2.855,2.487-6.41,3.729-9.978,3.729c-3.57,0-7.125-1.242-9.98-3.729l-48.82-42.736L28.667,415.23c9.299,5.834,20.197,9.329,31.983,9.329h363.911c11.784,0,22.687-3.495,31.983-9.329L301.393,241.631z M9.448,89.085C3.554,98.44,0,109.429,0,121.305v242.602c0,10.637,2.978,20.498,7.789,29.174l153.183-171.44L9.448,89.085z")
                 .daria-right
                   .teacher-main
-                    h2.teachers-header Даша Пирожкова
+                    h2.teachers-header= teachers.teacher1.name
                     .teacher-info
-                      p
-                        | Дипломированный тренер, сертифицированный специалист в области диетологии, спортивной эндокринологии и психологии отношений
-                      p
-                        | Основатель Школы Перемен для Женщин "PROкачSHOW" и руководитель Женского Направления Национального Антинаркотического Союза.
+                      p= teachers.teacher1.paragraph1
+                      p= teachers.teacher1.paragraph2
                     a.button.dark.drop-shadow(href="https://api.whatsapp.com/send?phone=79119838780" target="_blank")
                       svg.q-but-icon(x='0px', y='0px', viewbox='0 0 90 90')
                         g
@@ -685,20 +683,21 @@ html
               .foot-col
                 img.foot-logo(src="landing/img/foot-logo.png")
                 .foot-block
-                  div <b>ИНН</b> 7722416593
-                  div <b>ОГРН</b> 5177746148069
+                  div <b>ИНН</b> #{contacts.inn}
+                  div <b>ОГРН</b> #{contacts.ogrn}
                 .foot-block
                   div <b>Адрес:</b>
-                  div 111116, г.Москва, ул. Авиамоторная, д.4, корп.2, пом. IV, комната 2
+                  div #{contacts.address}
                 .foot-block
+                  // TODO: Add href to phone href="tel:+79119838780"
                   div <b>Моб. телефон:</b>
-                  a(href="tel:+79119838780") 8 (911) 983-87-80
+                  div #{contacts.mobile}
                 .foot-block
                   div <b>Телефон/Факс:</b>
-                  div 8 (495) 231-49-09
+                  div #{contacts.phone}
                 .foot-block
                   div <b>Эл.почта:</b>
-                  a(href="mailto:prokachshow@gmail.com") prokachshow@gmail.com
+                  a(href="mailto:"+contacts.email) #{contacts.email}
             .col-md-4
               .foot-col
                 .foot-col-title Полезные ссылки
