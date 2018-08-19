@@ -530,17 +530,15 @@ html
                             path(d="M87.573,197.333c0,29.44,23.893,53.333,53.333,53.333c11.2,0,21.653-3.52,30.187-9.387l-0.427,4.053c0,29.44,23.893,53.333,53.333,53.333s53.333-23.893,53.333-53.333l-0.427-4.053c8.64,5.973,18.987,9.387,30.187,9.387c29.44,0,53.333-23.893,53.333-53.333c0-21.227-12.48-39.467-30.507-48c17.92-8.533,30.507-26.773,30.507-48c0-29.44-23.893-53.333-53.333-53.333c-11.2,0-21.653,3.52-30.187,9.387l0.427-4.053C277.333,23.893,253.44,0,224,0s-53.333,23.893-53.333,53.333l0.427,4.053C162.453,51.413,152.107,48,140.907,48c-29.44,0-53.333,23.893-53.333,53.333c0,21.227,12.48,39.467,30.507,48C100.053,157.867,87.573,176.107,87.573,197.333z M224,96c29.44,0,53.333,23.893,53.333,53.333S253.44,202.667,224,202.667s-53.333-23.893-53.333-53.333S194.56,96,224,96z")
                             path(d="M32,256c0,106.027,85.973,192,192,192C224,341.973,138.027,256,32,256z")
                             path(d="M224,448c106.027,0,192-85.973,192-192C309.973,256,224,341.973,224,448z")
-                    .program-name Программа похудения Лайт
+                    .program-name= programs.program1.name
                   .program-body
-                    .program-point Еженедельное обновление меню
-                    .program-point Эффективные экспресс-тренировки и программа питания
-                    .program-point Мотивационная поддержка
-                    .program-point Участие в розыгрыше призов
-                    .program-price 3000 <span class="rub">₽</span>
+                    each point in programs.program1.points
+                      .program-point= point
+                    .program-price #{programs.program1.price} <span class="rub">₽</span>
                   .button.point.priceBtn(
                     id="program1"
-                    data-option="Программа похудения Лайт"
-                    data-price="3000"
+                    data-option=programs.program1.name
+                    data-price=programs.program1.price
                     ) Подать заявку
                   .program-info-link(data-toggle="modal" data-target="#payMethodsModal") способы оплаты
               .col-lg-4
@@ -551,18 +549,15 @@ html
                         g
                           g
                             path(d="M229.5,0C102,0,0,102,0,229.5S102,459,229.5,459c20.4,0,38.25-17.85,38.25-38.25c0-10.2-2.55-17.85-10.2-25.5c-5.1-7.65-10.2-15.3-10.2-25.5c0-20.4,17.851-38.25,38.25-38.25h45.9c71.4,0,127.5-56.1,127.5-127.5C459,91.8,357,0,229.5,0zM89.25,229.5c-20.4,0-38.25-17.85-38.25-38.25S68.85,153,89.25,153s38.25,17.85,38.25,38.25S109.65,229.5,89.25,229.5zM165.75,127.5c-20.4,0-38.25-17.85-38.25-38.25S145.35,51,165.75,51S204,68.85,204,89.25S186.15,127.5,165.75,127.5zM293.25,127.5c-20.4,0-38.25-17.85-38.25-38.25S272.85,51,293.25,51s38.25,17.85,38.25,38.25S313.65,127.5,293.25,127.5zM369.75,229.5c-20.4,0-38.25-17.85-38.25-38.25S349.35,153,369.75,153S408,170.85,408,191.25S390.15,229.5,369.75,229.5z")
-                    .program-name Леди - Классик
+                    .program-name= programs.program2.name
                   .program-body
-                    .program-point Мотивационная поддержка
-                    .program-point Индивидуальные программы питания и тренировок, направленные на улучшение качества тела
-                    .program-point Базовый курс лекций: питание, спорт, психология отношений
-                    .program-point Обсуждение актуальных вопросов с психологами
-                    .program-point Участие в розыгрыше призов
-                    .program-price 5000 <span class="rub">₽</span>
+                    each point in programs.program2.points
+                      .program-point= point
+                    .program-price #{programs.program2.price} <span class="rub">₽</span>
                   .button.point.priceBtn(
                     id="program2"
-                    data-option="Леди - Классик"
-                    data-price="5000"
+                    data-option=programs.program2.name
+                    data-price=programs.program2.price
                     ) Подать заявку
                   .program-info-link(data-toggle="modal" data-target="#payMethodsModal") способы оплаты
               .col-lg-4
@@ -572,18 +567,15 @@ html
                       svg(viewBox="0 0 19.481 19.481")
                         g
                           path(d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z")
-                    .program-name Малышка на миллион
+                    .program-name= programs.program3.name
                   .program-body
-                    .program-point Мотивационная поддержка
-                    .program-point Индивидуальная программа питания и тренировок
-                    .program-point Консультации экспертов в области психологии, фитнеса и диетологии
-                    .program-point Расширенный курс вводных лекций: питание, спорт, отношения, целеобразование, сексология, блогинг, медитации.
-                    .program-point Участие в розыгрыше призов
-                    .program-price 7000 <span class="rub">₽</span>
+                    each point in programs.program3.points
+                      .program-point= point
+                    .program-price #{programs.program3.price} <span class="rub">₽</span>
                   .button.point.priceBtn(
                     id="program3"
-                    data-option="Малышка на миллион"
-                    data-price="7000"
+                    data-option=programs.program3.name
+                    data-price=programs.program3.price
                     ) Подать заявку
                   .program-info-link(data-toggle="modal" data-target="#payMethodsModal") способы оплаты
                   .program-ribbon Супер!

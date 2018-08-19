@@ -16,6 +16,16 @@ const contentSchema = mongoose.Schema({
       name: String,
       price: String,
       points: [String]
+    },
+    program2: {
+      name: String,
+      price: String,
+      points: [String]
+    },
+    program3: {
+      name: String,
+      price: String,
+      points: [String]
     }
   },
   benefits: {
