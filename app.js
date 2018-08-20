@@ -106,9 +106,9 @@ app.get('/admin/*',function(req,res){
 });
 
 // Redirect paths to FONTS (static with admin/static) - react app
-app.get('/static/*',function(req,res){
-  res.redirect('/admin/static');
-});
+// app.get('/static/*',function(req,res){
+//   res.redirect('/admin/static');
+// });
 
 // LANDING PAGE ======
 app.get('/', async (req, res) => {
