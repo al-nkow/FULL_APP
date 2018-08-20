@@ -105,6 +105,11 @@ app.get('/admin/*',function(req,res){
   res.sendFile(path.join(__dirname+'/static/admin/index.html'));
 });
 
+// Redirect paths to FONTS (static with admin/static) - react app
+app.get('/static',function(req,res){
+  res.redirect('/admin/static');
+});
+
 // LANDING PAGE ======
 app.get('/', async (req, res) => {
   const content = await Content.findOne({ key: 'main_content' })
