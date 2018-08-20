@@ -126,14 +126,14 @@ html
               .season-start
                 svg(width="34.156" height="34.1" viewBox="0 0 34.156 34.1")
                   path(d="M520.993,1011.91a6.031,6.031,0,0,0,1.066-4.51,3.536,3.536,0,0,0-5.952-2.34,16.968,16.968,0,0,0-1.831-1.35,6.144,6.144,0,0,0-2.693-2.32,3.942,3.942,0,0,0-3.222-.06,17.46,17.46,0,0,0-6.551,0,3.944,3.944,0,0,0-3.223.06,6.154,6.154,0,0,0-2.695,2.32,17.168,17.168,0,0,0-1.831,1.35,3.536,3.536,0,0,0-5.952,2.34,6.04,6.04,0,0,0,1.066,4.51A17.062,17.062,0,1,0,520.993,1011.91Zm-15.908,21.81a15.63,15.63,0,0,1-14.843-20.56,63,63,0,0,0,6.88,4.92c0.153-.17,5.46-5.89,6.644-8.7,1.264-3.02.794-5.32-.387-6.82l-0.026-.02a15.058,15.058,0,0,1,3.465,0l-0.027.02c-1.18,1.5-1.65,3.8-.386,6.82,1.184,2.81,6.49,8.53,6.643,8.7a62.838,62.838,0,0,0,6.878-4.92A15.63,15.63,0,0,1,505.085,1033.72Zm8.632-13.38a49.406,49.406,0,0,0-17.265,0,1.185,1.185,0,0,0-1.036,1.18c0,4.13,3.191,8.3,9.668,8.3s9.67-4.17,9.67-8.3A1.188,1.188,0,0,0,513.717,1020.34Zm-0.686,2.16c-0.03.25-.078,0.55-0.15,0.88-0.081.36-.149,0.53-0.72,0.46-1.092-.13-13.062-0.13-14.154,0-0.571.07-.639-0.1-0.72-0.46-0.072-.33-0.12-0.63-0.151-0.88-0.051-.43-0.006-0.72.73-0.85a45.98,45.98,0,0,1,14.435,0C513.038,1021.78,513.082,1022.07,513.031,1022.5Z" transform="translate(-488 -1001.03)")
-                span Начинай преображаться прямо сейчас!
+                span= main.sub
       // =============== ABOUT ===============
       .black-block.main-mobile
         svg.wave-top(x="0px" y="0px" viewBox="63.4 484.8 2580.6 109.7")
           path(d="M504.4,519.7c328.3,44.9,470,6.7,596-3.8c126-10.5,298.4-5.5,475.7,31.5s390,56.1,598.1-24.1c208.1-80.2,330.8-16.2,469.8,20.4c0,33.2-0.6,10.9-0.6,51.9c-715.1-2.9-2258.7-0.2-2579.4,0.8c0-28.1-0.6-27.1-0.6-39.7C142.6,522.2,287.1,490.1,504.4,519.7z")
         .container
           .company-name Prokaчshow
-          .main-mobile-title Международный онлайн конкурс преображения, в котором вы приобретёте не только красивое тело, но и новый взгляд на жизнь
+          .main-mobile-title= main.info
           .s-but.s-but_main.scrollToPay Я готова меняться!
       // =============== ABOUT ===============
       .white-block
@@ -165,7 +165,7 @@ html
                     .awards__text
                       .awards__name ProKaчShow
                       | - Победитель Международной премии <br/> «Aurora Diamond Award-2017»
-                  .button.drop-shadow.scrollToPay Я хочу выиграть миллион!
+                  .button.drop-shadow.scrollToPay Я хочу участвовать!
       // =============== BENEFITS ===============
       .black-block
         .black-block__background
@@ -180,75 +180,75 @@ html
                   .col-md-6.col-lg-4
                     .benefit
                       .benefits-block.style1
-                        .ben-title Спортивная<br/> семья
+                        .ben-title!= benefits.ben1.name
                         .ben-img-wrap
                           .ben-img(style="background-image: url('landing/img/ben12.jpg')")
-                      .ben-notice Поддержка мотиватора и общение с участниками проекта 24/7
+                      .ben-notice= benefits.ben1.body
                   .col-md-6.col-lg-4
                     .benefit
                       .benefits-block.style2
-                        .ben-title Индивидуальный<br/> подход
+                        .ben-title!= benefits.ben2.name
                         .ben-img-wrap
                           .ben-img(style="background-image: url('landing/img/ben21.jpg')")
-                      .ben-notice Подберём программу питания и тренировок с учетом твоих индивидуальных особенностей
+                      .ben-notice= benefits.ben2.body
                   .col-md-6.col-lg-4
                     .benefit
                       .benefits-block.style3
-                        .ben-title Азарт и<br/> мотивация
+                        .ben-title!= benefits.ben3.name
                         .ben-img-wrap
                           .ben-img(style="background-image: url('landing/img/ben31.jpg')")
-                      .ben-notice Спортивные задания для поддержки боевого духа и спортивного азарта
+                      .ben-notice= benefits.ben3.body
                   .col-md-6.col-lg-4
                     .benefit
                       .benefits-block.style4
-                        .ben-title Креативные<br/> задания
+                        .ben-title!= benefits.ben4.name
                         .ben-img-wrap
                           .ben-img(style="background-image: url('landing/img/ben42.jpg')")
-                      .ben-notice Поможем выйти из зоны комфорта, развить твои таланты и выиграть специальный приз
+                      .ben-notice= benefits.ben4.body
                   .col-md-6.col-lg-4
                     .benefit
                       .benefits-block.style5
-                        .ben-title Персональное<br/> обучение
+                        .ben-title!= benefits.ben5.name
                         .ben-img-wrap
                           .ben-img(style="background-image: url('landing/img/ben211.jpg')")
-                      .ben-notice Лекции и мастер-классы для всестороннего развития на самые различные темы
+                      .ben-notice= benefits.ben5.body
                   .col-md-6.col-lg-4
                     .benefit
                       .benefits-block.style6
-                        .ben-title Полная<br/> трансформация
+                        .ben-title!= benefits.ben6.name
                         .ben-img-wrap
                           //.ben-img(style="background-image: url(" + require("./img/ben6.jpg") + ")")
                           .ben-img.ben-animate
-                      .ben-notice Поможем изменить не только твоё тело, но и образ мыслей.
+                      .ben-notice= benefits.ben6.body
       // =============== PRIZES ===============
       .white-block
         include tmps/wave
         .container
           .prizes
-            h3.text-center Наши партнёры и главные призы
-            .sub-title Тебя ждёт много интересного!
+            h3.text-center= prizes.title
+            .sub-title= prizes.subtitle
             .places
               .main-prize
                 .place 1 место &mdash;
-                .main-prize-sum Денежный приз
+                .main-prize-sum= prizes.prize1
                 //.main-prize-sum 1 000 000 <span class="rub">₽</span>
                 //.main-prize-take Денежный приз
               .prize-item.prize1
                 .place 2 место &mdash;
                 .prize-img(style="background-image: url('landing/img/prize11.jpg')")
-                .prize-name Пластическая операция на выбор
+                .prize-name= prizes.prize2
               .prize-item.prize2
                 .place 3 место &mdash;
                 .prize-img(style="background-image: url('landing/img/prize22.jpg')")
-                .prize-name Белоснежные виниры
+                .prize-name= prizes.prize3
               .prize-item.prize3
                 .place 4.5 место &mdash;
                 .prize-img(style="background-image: url('landing/img/prize31.jpg')")
-                .prize-name Обучение в индустрии спорта и красоты
+                .prize-name= prizes.prize4
               .prize-item.prize4
                 .place Самая<br/> креативная &mdash;
                 .prize-img(style="background-image: url('landing/img/prize4.jpg')")
-                .prize-name Обучение на телеведущую в останкино
+                .prize-name= prizes.prize5
       // =============== TEACHERS ===============
       .teachers#teachers
         .teachers-background
@@ -286,12 +286,10 @@ html
                             path(d="M485.211,363.906c0,10.637-2.992,20.498-7.785,29.174L324.225,221.67l151.54-132.584c5.895,9.355,9.446,20.344,9.446,32.219V363.906z M242.606,252.793l210.863-184.5c-8.653-4.737-18.397-7.642-28.908-7.642H60.651c-10.524,0-20.271,2.905-28.889,7.642L242.606,252.793z M301.393,241.631l-48.809,42.734c-2.855,2.487-6.41,3.729-9.978,3.729c-3.57,0-7.125-1.242-9.98-3.729l-48.82-42.736L28.667,415.23c9.299,5.834,20.197,9.329,31.983,9.329h363.911c11.784,0,22.687-3.495,31.983-9.329L301.393,241.631z M9.448,89.085C3.554,98.44,0,109.429,0,121.305v242.602c0,10.637,2.978,20.498,7.789,29.174l153.183-171.44L9.448,89.085z")
                 .daria-right
                   .teacher-main
-                    h2.teachers-header Даша Пирожкова
+                    h2.teachers-header= teachers.teacher1.name
                     .teacher-info
-                      p
-                        | Дипломированный тренер, сертифицированный специалист в области диетологии, спортивной эндокринологии и психологии отношений
-                      p
-                        | Основатель Школы Перемен для Женщин "PROкачSHOW" и руководитель Женского Направления Национального Антинаркотического Союза.
+                      p= teachers.teacher1.paragraph1
+                      p= teachers.teacher1.paragraph2
                     a.button.dark.drop-shadow(href="https://api.whatsapp.com/send?phone=79119838780" target="_blank")
                       svg.q-but-icon(x='0px', y='0px', viewbox='0 0 90 90')
                         g
@@ -519,7 +517,7 @@ html
           .programs-block
             h3.text-center Программы участия
             .block-head-divider
-            .sub-title Набор на 11 сезон. Старт август - сентябрь 2018 года.
+            .sub-title= programs.start
             .row.programs
               .col-lg-4
                 .program-item
@@ -532,17 +530,15 @@ html
                             path(d="M87.573,197.333c0,29.44,23.893,53.333,53.333,53.333c11.2,0,21.653-3.52,30.187-9.387l-0.427,4.053c0,29.44,23.893,53.333,53.333,53.333s53.333-23.893,53.333-53.333l-0.427-4.053c8.64,5.973,18.987,9.387,30.187,9.387c29.44,0,53.333-23.893,53.333-53.333c0-21.227-12.48-39.467-30.507-48c17.92-8.533,30.507-26.773,30.507-48c0-29.44-23.893-53.333-53.333-53.333c-11.2,0-21.653,3.52-30.187,9.387l0.427-4.053C277.333,23.893,253.44,0,224,0s-53.333,23.893-53.333,53.333l0.427,4.053C162.453,51.413,152.107,48,140.907,48c-29.44,0-53.333,23.893-53.333,53.333c0,21.227,12.48,39.467,30.507,48C100.053,157.867,87.573,176.107,87.573,197.333z M224,96c29.44,0,53.333,23.893,53.333,53.333S253.44,202.667,224,202.667s-53.333-23.893-53.333-53.333S194.56,96,224,96z")
                             path(d="M32,256c0,106.027,85.973,192,192,192C224,341.973,138.027,256,32,256z")
                             path(d="M224,448c106.027,0,192-85.973,192-192C309.973,256,224,341.973,224,448z")
-                    .program-name Программа похудения Лайт
+                    .program-name= programs.program1.name
                   .program-body
-                    .program-point Еженедельное обновление меню
-                    .program-point Эффективные экспресс-тренировки и программа питания
-                    .program-point Мотивационная поддержка
-                    .program-point Участие в розыгрыше призов
-                    .program-price 3000 <span class="rub">₽</span>
+                    each point in programs.program1.points
+                      .program-point= point
+                    .program-price #{programs.program1.price} <span class="rub">₽</span>
                   .button.point.priceBtn(
                     id="program1"
-                    data-option="Программа похудения Лайт"
-                    data-price="3000"
+                    data-option=programs.program1.name
+                    data-price=programs.program1.price
                     ) Подать заявку
                   .program-info-link(data-toggle="modal" data-target="#payMethodsModal") способы оплаты
               .col-lg-4
@@ -553,18 +549,15 @@ html
                         g
                           g
                             path(d="M229.5,0C102,0,0,102,0,229.5S102,459,229.5,459c20.4,0,38.25-17.85,38.25-38.25c0-10.2-2.55-17.85-10.2-25.5c-5.1-7.65-10.2-15.3-10.2-25.5c0-20.4,17.851-38.25,38.25-38.25h45.9c71.4,0,127.5-56.1,127.5-127.5C459,91.8,357,0,229.5,0zM89.25,229.5c-20.4,0-38.25-17.85-38.25-38.25S68.85,153,89.25,153s38.25,17.85,38.25,38.25S109.65,229.5,89.25,229.5zM165.75,127.5c-20.4,0-38.25-17.85-38.25-38.25S145.35,51,165.75,51S204,68.85,204,89.25S186.15,127.5,165.75,127.5zM293.25,127.5c-20.4,0-38.25-17.85-38.25-38.25S272.85,51,293.25,51s38.25,17.85,38.25,38.25S313.65,127.5,293.25,127.5zM369.75,229.5c-20.4,0-38.25-17.85-38.25-38.25S349.35,153,369.75,153S408,170.85,408,191.25S390.15,229.5,369.75,229.5z")
-                    .program-name Леди - Классик
+                    .program-name= programs.program2.name
                   .program-body
-                    .program-point Мотивационная поддержка
-                    .program-point Индивидуальные программы питания и тренировок, направленные на улучшение качества тела
-                    .program-point Базовый курс лекций: питание, спорт, психология отношений
-                    .program-point Обсуждение актуальных вопросов с психологами
-                    .program-point Участие в розыгрыше призов
-                    .program-price 5000 <span class="rub">₽</span>
+                    each point in programs.program2.points
+                      .program-point= point
+                    .program-price #{programs.program2.price} <span class="rub">₽</span>
                   .button.point.priceBtn(
                     id="program2"
-                    data-option="Леди - Классик"
-                    data-price="5000"
+                    data-option=programs.program2.name
+                    data-price=programs.program2.price
                     ) Подать заявку
                   .program-info-link(data-toggle="modal" data-target="#payMethodsModal") способы оплаты
               .col-lg-4
@@ -574,18 +567,15 @@ html
                       svg(viewBox="0 0 19.481 19.481")
                         g
                           path(d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z")
-                    .program-name Малышка на миллион
+                    .program-name= programs.program3.name
                   .program-body
-                    .program-point Мотивационная поддержка
-                    .program-point Индивидуальная программа питания и тренировок
-                    .program-point Консультации экспертов в области психологии, фитнеса и диетологии
-                    .program-point Расширенный курс вводных лекций: питание, спорт, отношения, целеобразование, сексология, блогинг, медитации.
-                    .program-point Участие в розыгрыше призов
-                    .program-price 7000 <span class="rub">₽</span>
+                    each point in programs.program3.points
+                      .program-point= point
+                    .program-price #{programs.program3.price} <span class="rub">₽</span>
                   .button.point.priceBtn(
                     id="program3"
-                    data-option="Малышка на миллион"
-                    data-price="7000"
+                    data-option=programs.program3.name
+                    data-price=programs.program3.price
                     ) Подать заявку
                   .program-info-link(data-toggle="modal" data-target="#payMethodsModal") способы оплаты
                   .program-ribbon Супер!
@@ -685,20 +675,21 @@ html
               .foot-col
                 img.foot-logo(src="landing/img/foot-logo.png")
                 .foot-block
-                  div <b>ИНН</b> 7722416593
-                  div <b>ОГРН</b> 5177746148069
+                  div <b>ИНН</b> #{contacts.inn}
+                  div <b>ОГРН</b> #{contacts.ogrn}
                 .foot-block
                   div <b>Адрес:</b>
-                  div 111116, г.Москва, ул. Авиамоторная, д.4, корп.2, пом. IV, комната 2
+                  div #{contacts.address}
                 .foot-block
+                  // TODO: Add href to phone href="tel:+79119838780"
                   div <b>Моб. телефон:</b>
-                  a(href="tel:+79119838780") 8 (911) 983-87-80
+                  div #{contacts.mobile}
                 .foot-block
                   div <b>Телефон/Факс:</b>
-                  div 8 (495) 231-49-09
+                  div #{contacts.phone}
                 .foot-block
                   div <b>Эл.почта:</b>
-                  a(href="mailto:prokachshow@gmail.com") prokachshow@gmail.com
+                  a(href="mailto:"+contacts.email) #{contacts.email}
             .col-md-4
               .foot-col
                 .foot-col-title Полезные ссылки
