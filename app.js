@@ -101,7 +101,7 @@ app.use('/user', userRoutes);
 app.use('/content', contentRoutes);
 
 // ADMIN PANEL ======
-app.get('/admin',function(req,res){
+app.get('/admin/*',function(req,res){
   res.sendFile(path.join(__dirname+'/static/admin/index.html'));
 });
 
