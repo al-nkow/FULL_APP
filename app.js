@@ -15,8 +15,6 @@ app.use(minifyHTML({
   }
 }));
 
-
-
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
@@ -28,6 +26,7 @@ const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/user');
 const contentRoutes = require('./api/routes/content');
+const newsRoutes = require('./api/routes/news');
 
 // mongoose.Promise = Promise;
 mongoose.set('debug', true); // if - !prod
@@ -99,6 +98,7 @@ app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
 app.use('/user', userRoutes);
 app.use('/content', contentRoutes);
+app.use('/news', newsRoutes);
 
 // ADMIN PANEL ======
 app.get('/admin/*',function(req,res){
