@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const News = require('../models/news');
+const fs = require('fs');
 
 // CREATE NEWS
 exports.news_create = async (req, res, next) => {
@@ -25,6 +26,24 @@ exports.news_get_all = async (req, res) => {
     return res.status(500).json({ error: err });
   }
 };
+
+// DELETE NEWS
+exports.news_delete = async (req, res) => {
+  try {
+    const foundNews = await News.findById(req.params.newsId);
+    await News.remove({ _id: req.params.newsId });
+    if (foundNews && foundNews.image) {
+      await fs.unlink('static' + foundNews.image);
+    }
+    return res.status(200).json({ message: 'News deleted' });
+  } catch (err) {
+    return res.status(500).json({ error: err });
+  }
+};
+
+
+
+
 
 // UPDATE CONTENT
 // exports.content_create = async (req, res) => {

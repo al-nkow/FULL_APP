@@ -30,6 +30,9 @@ const upload = multer({
 
 router.post('/', upload.single('newsImage'), NewsController.news_create);
 router.get('/', NewsController.news_get_all);
+router.delete('/:newsId', NewsController.news_delete);
+
+
 
 
 
