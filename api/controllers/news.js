@@ -3,7 +3,7 @@ const News = require('../models/news');
 const fs = require('fs');
 
 // CREATE NEWS
-exports.news_create = async (req, res, next) => {
+exports.news_create = async (req, res) => {
   try {
     const newNews = new News({
       ...req.body,
@@ -20,7 +20,7 @@ exports.news_create = async (req, res, next) => {
 // GET ALL NEWS
 exports.news_get_all = async (req, res) => {
   try {
-    const news = await News.find().sort({ 'date': -1 }); // .select('product quantity _id')
+    const news = await News.find().sort({ 'date': -1 }); // .select('title _id')
     res.status(200).json({ news: news });
   } catch (err) {
     return res.status(500).json({ error: err });
@@ -41,29 +41,22 @@ exports.news_delete = async (req, res) => {
   }
 };
 
-
-
-
-
-// UPDATE CONTENT
-// exports.content_create = async (req, res) => {
-//   const content = await Content.findOne({ key: 'main_content' });
-//   try {
-//     if (content) {
-//       // Update one
-//       await Content.update({key: 'main_content'}, {$set: req.body});
-//       res.status(201).json({ message: 'Content updated' });
-//     } else {
-//       // Create new if no content found
-//       const newContent = new Content({
-//         ...req.body,
-//         _id: new mongoose.Types.ObjectId(),
-//         key: 'main_content',
-//       });
-//       await newContent.save();
-//       res.status(201).json({ message: 'Content created' });
-//     }
-//   } catch(err) {
-//     return res.status(500).json({ error: err });
-//   }
-// };
+// UPDATE NEWS
+exports.news_update = async (req, res) => {
+  const id = req.params.newsId;
+  // delete old image if there is a new one
+  if (req.file && req.file.filename) {
+    const foundNews = await News.findById(req.params.newsId);
+    if (foundNews && foundNews.image) {
+      await fs.unlink('static' + foundNews.image);
+    }
+  }
+  const updates = {...req.body};
+  if (req.file && req.file.filename) updates.image = '/uploads/' + req.file.filename;
+  try {
+    await News.findByIdAndUpdate(id, updates);
+    res.status(200).json({ message: 'News updated' });
+  } catch (err) {
+    return res.status(500).json({ error: err });
+  }
+};

@@ -11,6 +11,6 @@ const passportJWT = passport.authenticate('jwt', { session: false });
 router.get('/', passportJWT, OrdersController.orders_get_all);
 router.post('/', passportJWT, OrdersController.orders_create_order);
 router.get('/:orderId', passportJWT, OrdersController.orders_get_order);
-router.delete('/:orderId', passportJWT, OrdersController.orders_get_order);
+router.delete('/:orderId', passportJWT, OrdersController.orders_delete_order);
 
 module.exports = router;

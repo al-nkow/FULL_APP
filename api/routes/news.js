@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const NewsController = require('../controllers/news');
 
+const passport = require('passport');
+const passportJWT = passport.authenticate('jwt', { session: false });
+
 const multer = require('multer'); // file upload
 
 const storage = multer.diskStorage({
@@ -15,7 +18,7 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage: storage,
   limits: {
-    fileSize: 1024 * 1024 * 2 // 2 mb file size allowed
+    fileSize: 1024 * 1024 * 30 // 2 mb file size allowed
   },
   fileFilter: (req, file, cb) => {
     if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
@@ -26,15 +29,10 @@ const upload = multer({
   }
 });
 
-
-
-router.post('/', upload.single('newsImage'), NewsController.news_create);
-router.get('/', NewsController.news_get_all);
-router.delete('/:newsId', NewsController.news_delete);
-
-
-
-
+router.post('/', passportJWT, upload.single('newsImage'), NewsController.news_create);
+router.get('/', passportJWT, NewsController.news_get_all);
+router.delete('/:newsId', passportJWT, NewsController.news_delete);
+router.put('/:newsId', passportJWT, upload.single('newsImage'), NewsController.news_update);
 
 module.exports = router;
 
