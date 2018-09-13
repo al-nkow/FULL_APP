@@ -39,3 +39,27 @@ exports.review_create = async (req, res) => {
     return res.status(500).json({ error: err });
   }
 };
+
+// GET ALL REVIEWS
+exports.reviews_get_all = async (req, res) => {
+  try {
+    const reviews = await Review.find(); //.sort({ 'date': -1 }); // .select('title _id')
+    res.status(200).json({ reviews: reviews });
+  } catch (err) {
+    return res.status(500).json({ error: err });
+  }
+};
+
+// DELETE REVIEW ITEM
+exports.review_delete = async (req, res) => {
+  try {
+    const foundReview = await Review.findById(req.params.reviewId);
+    await Review.remove({ _id: req.params.reviewId });
+    if (foundReview && foundReview.image) {
+      await fs.unlink('static' + foundReview.image);
+    }
+    return res.status(200).json({ message: 'Review deleted' });
+  } catch (err) {
+    return res.status(500).json({ error: err });
+  }
+};

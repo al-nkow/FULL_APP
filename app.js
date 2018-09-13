@@ -100,7 +100,7 @@ app.use('/orders', orderRoutes);
 app.use('/user', userRoutes);
 app.use('/content', contentRoutes);
 app.use('/news', newsRoutes);
-app.use('/review', reviewRoutes);
+app.use('/reviews', reviewRoutes);
 
 // ADMIN PANEL ======
 app.get('/admin/*',function(req,res){

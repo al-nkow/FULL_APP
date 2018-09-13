@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const NewsController = require('../controllers/reviews');
+const ReviewsController = require('../controllers/reviews');
 
 const passport = require('passport');
 const passportJWT = passport.authenticate('jwt', { session: false });
@@ -29,9 +29,9 @@ const upload = multer({
   }
 });
 
-router.post('/', passportJWT, upload.single('reviewImage'), NewsController.review_create);
-// router.get('/', passportJWT, NewsController.news_get_all);
-// router.delete('/:newsId', passportJWT, NewsController.news_delete);
+router.post('/', passportJWT, upload.single('reviewImage'), ReviewsController.review_create);
+router.get('/', passportJWT, ReviewsController.reviews_get_all);
+router.delete('/:reviewId', passportJWT, ReviewsController.review_delete);
 // router.put('/:newsId', passportJWT, upload.single('newsImage'), NewsController.news_update);
 
 module.exports = router;
