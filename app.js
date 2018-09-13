@@ -27,6 +27,7 @@ const orderRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/user');
 const contentRoutes = require('./api/routes/content');
 const newsRoutes = require('./api/routes/news');
+const reviewRoutes = require('./api/routes/reviews');
 
 // mongoose.Promise = Promise;
 mongoose.set('debug', true); // if - !prod
@@ -55,7 +56,7 @@ const Content = require('./api/models/content');
 
 
 
-mongoose.connect('mongodb://localhost:27017/myapi', {
+mongoose.connect('mongodb://localhost:27017/myapi', { // proka4
     // useMongoClient: true
 }).catch(err => {
   if (err.message.indexOf("ECONNREFUSED") !== -1) {
@@ -99,6 +100,7 @@ app.use('/orders', orderRoutes);
 app.use('/user', userRoutes);
 app.use('/content', contentRoutes);
 app.use('/news', newsRoutes);
+app.use('/review', reviewRoutes);
 
 // ADMIN PANEL ======
 app.get('/admin/*',function(req,res){
