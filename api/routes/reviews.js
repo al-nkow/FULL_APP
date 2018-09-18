@@ -32,7 +32,7 @@ const upload = multer({
 router.post('/', passportJWT, upload.single('reviewImage'), ReviewsController.review_create);
 router.get('/', passportJWT, ReviewsController.reviews_get_all);
 router.delete('/:reviewId', passportJWT, ReviewsController.review_delete);
-// router.put('/:newsId', passportJWT, upload.single('newsImage'), NewsController.news_update);
+router.put('/:reviewId', passportJWT, upload.single('reviewImage'), ReviewsController.review_update);
 
 module.exports = router;
 

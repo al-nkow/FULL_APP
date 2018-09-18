@@ -46,7 +46,7 @@ exports.news_update = async (req, res) => {
   const id = req.params.newsId;
   // delete old image if there is a new one
   if (req.file && req.file.filename) {
-    const foundNews = await News.findById(req.params.newsId);
+    const foundNews = await News.findById(id);
     if (foundNews && foundNews.image) {
       await fs.unlink('static' + foundNews.image);
     }

@@ -3,27 +3,43 @@ const Review = require('../models/review');
 const fs = require('fs');
 const request = require('request');
 
+// UPDATE REVIEW
+exports.review_update = async (req, res) => {
+  const id = req.params.reviewId;
+  // delete old image if there is a new one
+  if (req.file && req.file.filename) {
+    const foundReview = await Review.findById(id);
+    if (foundReview && foundReview.image) {
+      await fs.unlink('static' + foundReview.image);
+    }
+  }
+  try {
+    const review = {};
+    if (req.file && req.file.filename) review.image = '/uploads/' + req.file.filename;
+    if (req.body.comments) review.comments = JSON.parse(req.body.comments);
+    review.link = req.body.link;
+    review.order = req.body.order;
+
+    await Review.findByIdAndUpdate(id, review);
+    res.status(200).json({ message: 'Review updated' });
+  } catch (err) {
+    return res.status(500).json({ error: err });
+  }
+};
+
 // CREATE REVIEW
 exports.review_create = async (req, res) => {
-
-  console.log('===================');
-  console.log('===================');
-  console.log(req.body);
-  console.log('===================');
-  console.log('===================');
-
-
   const fileName = new Date().toISOString() + 'review.jpg';
   if (req.body.imageLink) {
     request(req.body.imageLink)
-      // .on('error', (err) => { console.log(err)})
-      // .on('response', (response) => { console.log('>>>>>>>>>', response.body)})
+      .on('error', (err) => { console.log('ERROR: ', err) })
       .pipe(fs.createWriteStream(`./static/uploads/${fileName}`));
   }
 
   try {
     const review = {};
     if (req.body.imageLink) review.image = '/uploads/' + fileName;
+    if (req.file) review.image = '/uploads/' + req.file.filename;
     if (req.body.comments) review.comments = JSON.parse(req.body.comments);
     review.link = req.body.link;
     review.order = req.body.order;
@@ -43,7 +59,7 @@ exports.review_create = async (req, res) => {
 // GET ALL REVIEWS
 exports.reviews_get_all = async (req, res) => {
   try {
-    const reviews = await Review.find(); //.sort({ 'date': -1 }); // .select('title _id')
+    const reviews = await Review.find().sort({ 'order': -1 }); //.sort({ 'date': -1 }); // .select('title _id')
     res.status(200).json({ reviews: reviews });
   } catch (err) {
     return res.status(500).json({ error: err });
