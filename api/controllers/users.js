@@ -52,9 +52,21 @@ exports.users_user_login = async (req, res, next) => {
     userId: foundUser._id
   }, process.env.SECRET_OR_KEY, { expiresIn: '1h' });
 
+  // ==========
+  const refreshToken = jwt.sign({
+    email: email,
+    userId: foundUser._id
+  }, process.env.SECRET_REFRESH_TOKEN, { expiresIn: '7d' });
+  const decoded = jwt.verify(token, process.env.SECRET_OR_KEY);
+  foundUser.refreshToken = refreshToken;
+  foundUser.save();
+  // ==========
+
   return res.status(200).json({
     message: 'Auth successful',
-    token: token
+    token: token,
+    refreshToken: refreshToken,
+    expires_in: decoded ? decoded.exp : ''
   });
 };
 
@@ -66,4 +78,51 @@ exports.users_user_delete = async (req, res) => {
   } catch (err) {
     return res.status(500).json({ error: err });
   }
+};
+
+// REFRESH TOKEN
+exports.users_user_token = async (req, res, next) => {
+
+  console.log('===================');
+  console.log('===================');
+  console.log(req.body);
+  console.log('===================');
+  console.log('===================');
+  return res.status(200).json({
+    token: 'oooops!'
+  });
+
+  
+
+
+  const { email, password } = req.body;
+
+  const foundUser = await User.findOne({ email: email });
+  if (!foundUser) return res.status(401).json({ message: 'Auth failed' });
+
+  const isMatch = await foundUser.isValidPassword(password); // isValidPassword - custom method
+
+  if (!isMatch) return res.status(401).json({ message: 'Auth failed' });
+
+  const token = jwt.sign({
+    email: email,
+    userId: foundUser._id
+  }, process.env.SECRET_OR_KEY, { expiresIn: '1h' });
+
+  // ==========
+  const refreshToken = jwt.sign({
+    email: email,
+    userId: foundUser._id
+  }, process.env.SECRET_REFRESH_TOKEN, { expiresIn: '7d' });
+  const decoded = jwt.verify(token, process.env.SECRET_OR_KEY);
+  foundUser.refreshToken = refreshToken;
+  foundUser.save();
+  // ==========
+
+  return res.status(200).json({
+    message: 'Auth successful',
+    token: token,
+    refreshToken: refreshToken,
+    expires_in: decoded ? decoded.exp : ''
+  });
 };
