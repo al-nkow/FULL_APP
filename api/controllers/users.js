@@ -56,7 +56,7 @@ exports.users_user_login = async (req, res, next) => {
   const refreshToken = jwt.sign({
     email: email,
     userId: foundUser._id
-  }, process.env.SECRET_REFRESH_TOKEN, { expiresIn: '7d' });
+  }, process.env.SECRET_REFRESH_TOKEN, { expiresIn: '1d' });
   const decoded = jwt.verify(token, process.env.SECRET_OR_KEY);
   foundUser.refreshToken = refreshToken;
   foundUser.save();
@@ -82,45 +82,41 @@ exports.users_user_delete = async (req, res) => {
 
 // REFRESH TOKEN
 exports.users_user_token = async (req, res, next) => {
+  if (!req.body.token) res.status(401).json({ message: 'Auth failed' });
 
-  console.log('===================');
-  console.log('===================');
-  console.log(req.body);
-  console.log('===================');
-  console.log('===================');
-  return res.status(200).json({
-    token: 'oooops!'
-  });
+  let reqTokenInfo;
+  try {
+    reqTokenInfo = await jwt.verify(req.body.token, process.env.SECRET_REFRESH_TOKEN);
+  } catch (e) {
+    console.log('ERROR: ', e);
+    return res.status(401).json({ message: 'Auth failed' });
+  }
 
-  
+  // const reqTokenInfo = await jwt.verify(req.body.token, process.env.SECRET_REFRESH_TOKEN);
+  // if (!reqTokenInfo) return res.status(401).json({ message: 'Auth failed' });
+  if (reqTokenInfo.exp * 1000 < Date.now()) res.status(401).json({ message: 'Auth failed' });
 
+  const foundUser = await User.findOne({ _id: reqTokenInfo.userId });
+  if (foundUser.refreshToken !== req.body.token) res.status(401).json({ message: 'Auth failed' });
 
-  const { email, password } = req.body;
-
-  const foundUser = await User.findOne({ email: email });
-  if (!foundUser) return res.status(401).json({ message: 'Auth failed' });
-
-  const isMatch = await foundUser.isValidPassword(password); // isValidPassword - custom method
-
-  if (!isMatch) return res.status(401).json({ message: 'Auth failed' });
-
+  // New token
   const token = jwt.sign({
-    email: email,
+    email: foundUser.email,
     userId: foundUser._id
   }, process.env.SECRET_OR_KEY, { expiresIn: '1h' });
 
-  // ==========
+  // New refreshToken
   const refreshToken = jwt.sign({
-    email: email,
+    email: foundUser.email,
     userId: foundUser._id
-  }, process.env.SECRET_REFRESH_TOKEN, { expiresIn: '7d' });
+  }, process.env.SECRET_REFRESH_TOKEN, { expiresIn: '1d' });
   const decoded = jwt.verify(token, process.env.SECRET_OR_KEY);
+  // Save new refreshToken
   foundUser.refreshToken = refreshToken;
   foundUser.save();
-  // ==========
 
   return res.status(200).json({
-    message: 'Auth successful',
+    message: 'Refresh token successful',
     token: token,
     refreshToken: refreshToken,
     expires_in: decoded ? decoded.exp : ''
