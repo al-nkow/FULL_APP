@@ -37,7 +37,7 @@ const Review = require('./api/models/review');
 const News = require('./api/models/news');
 
 app.locals.moment = require('moment');
-app.locals.moment.lang('ru');
+app.locals.moment.locale('ru');
 
 // var address = process.env.MONGO_PORT_27017_TCP_ADDR || '127.0.0.1';
 // var port = process.env.MONGO_PORT_27017_TCP_PORT || '27017';
