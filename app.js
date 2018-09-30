@@ -35,6 +35,8 @@ mongoose.set('debug', true); // if - !prod
 
 
 const Content = require('./api/models/content');
+const Review = require('./api/models/review');
+const News = require('./api/models/news');
 
 
 
@@ -112,14 +114,45 @@ app.get('/admin/*',function(req,res){
 //   res.redirect('/admin/static');
 // });
 
+
+
+
+
+
+
+
 // LANDING PAGE ======
 app.get('/', async (req, res) => {
   const content = await Content.findOne({ key: 'main_content' })
     .select('main about programs benefits prizes teachers contacts');
-  res.render('landing/index', content, function(err, html) {
+  const reviews = await Review.find();
+  const news = await News.find();
+
+  let data = { content, reviews, news };
+
+  console.log('===========================');
+  console.log('===========================');
+  console.log(news);
+  console.log('===========================');
+  console.log('===========================');
+
+
+  res.render('landing/index', data, function(err, html) {
     res.send(html);
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

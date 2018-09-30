@@ -18,6 +18,8 @@ router.get('/protected', passportJWT, (req, res) => {
   res.send('I\'m protected!');
 });
 
+router.post('/logout', passportJWT, UsersController.users_user_logout);
+
 
 
 module.exports = router;

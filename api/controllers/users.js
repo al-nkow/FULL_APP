@@ -122,3 +122,24 @@ exports.users_user_token = async (req, res, next) => {
     expires_in: decoded ? decoded.exp : ''
   });
 };
+
+// LOGOUT
+exports.users_user_logout = async (req, res) => {
+  if (!req.body.token) res.status(401).json({ message: 'No token is present' });
+
+  let reqTokenInfo;
+  try {
+    reqTokenInfo = await jwt.verify(req.body.token, process.env.SECRET_REFRESH_TOKEN);
+    req.logout();
+  } catch (e) {
+    console.log('ERROR: ', e);
+    return res.status(401).json({ message: 'Auth failed' });
+  }
+
+  try {
+    await User.findByIdAndUpdate(reqTokenInfo.userId, {refreshToken: ''});
+    res.status(200).json({ message: 'Token deleted' });
+  } catch (err) {
+    return res.status(500).json({ error: err });
+  }
+};

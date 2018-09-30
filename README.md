@@ -7,6 +7,7 @@
 ##### TODO:
 1. Add mongodb password!
 2. Move mongo address, port, password into ENV
+3. check - if .env available from outside
 #####
 
 ```
