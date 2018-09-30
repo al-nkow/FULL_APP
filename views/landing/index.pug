@@ -386,6 +386,7 @@ html
               .reviewSiema
                 each review in reviews
                   .instaSlide
+                    img(src="landing/img/instahead.jpg" style="width: 100%; display: block;")
                     a(href=review.link target="_blank")
                       img.d-block.w-100(src=review.image)
                       .r-comments
@@ -554,45 +555,8 @@ html
                   a.news-item(href=newsItem.link target="_blank")
                     img(src=newsItem.image)
                     .news-body
-                      .news-date= newsItem.date
+                      .news-date= moment(newsItem.date).format("DD MMMM YYYY, HH:MM")
                       .news-title= newsItem.title
-              // span='(Created at: ' + moment(obj.createTime).format("YYYY/MM/DD") + ')'
-              //.news-wrap.newsSiema
-                a.news-item(href="https://www.instagram.com/p/BkQQ1wBldEx/?utm_source=ig_share_sheet&igshid=1gtsqfoww36ld" target="_blank")
-                  img(src="landing/img/news7.jpg")
-                  .news-body
-                    .news-date 20 июня 2018, 22:24
-                    .news-title Международный день борьбы с наркоманией - отмечаем бесплатной тренировкой в Москве!
-                a.news-item(href="https://www.instagram.com/p/BjKCRARlL68/?utm_source=ig_share_sheet&igshid=24hix61ac3w1&r=wa1" target="_blank")
-                  img(src="landing/img/news5.jpg")
-                  .news-body
-                    .news-date 08 июня 2018, 17:16
-                    .news-title Семинар PROкачSHOW в Таллине
-                a.news-item(href="https://www.instagram.com/p/BjutSqJjEAX/?utm_source=ig_share_sheet&igshid=7zi4h7eiftu7&r=wa1" target="_blank")
-                  img(src="landing/img/news6.jpg")
-                  .news-body
-                    .news-date 08 июня 2018, 15:48
-                    .news-title Бесплатная тренировка в Санкт-Петербурге с командой PROкачSHOW
-                a.news-item(href="https://www.instagram.com/p/BjaMOErl741/?r=wa1" target="_blank")
-                  img(src="landing/img/news1.jpg")
-                  .news-body
-                    .news-date 01 июня 2018, 15:10
-                    .news-title Со 2 по 6 июня Прокачшоу на семейном форуме в Сочи
-                a.news-item(href="https://www.instagram.com/p/BikLRiFFVPK/?r=wa1" target="_blank")
-                  img(src="landing/img/news4.jpg")
-                  .news-body
-                    .news-date 09 мая 2018, 22:20
-                    .news-title Прокачшоу и НАС прошли в Бессмертном полку 9 мая
-                a.news-item(href="https://www.instagram.com/p/BiaGYCnl4_v/?r=wa1" target="_blank")
-                  img(src="landing/img/news3.jpg")
-                  .news-body
-                    .news-date 05 мая 2018, 21:00
-                    .news-title Проведена первая благотворительная тренировка
-                a.news-item(href="https://www.instagram.com/p/BiUrAKelzBP/?r=wa1" target="_blank")
-                  img(src="landing/img/news2.jpg")
-                  .news-body
-                    .news-date 03 мая 2018, 19:00
-                    .news-title 5 мая стартуют бесплатные тренировки Прокачшоу в Москве!
               .news-controls.news-prev
                 svg.slider-arr(viewBox="0 0 129 129")
                   g

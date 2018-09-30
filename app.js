@@ -18,7 +18,7 @@ app.use(minifyHTML({
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
-const path  = require('path'); // <<<<<-----
+const path  = require('path');
 
 const mongoose = require('mongoose');
 
@@ -32,17 +32,12 @@ const reviewRoutes = require('./api/routes/reviews');
 // mongoose.Promise = Promise;
 mongoose.set('debug', true); // if - !prod
 
-
-
 const Content = require('./api/models/content');
 const Review = require('./api/models/review');
 const News = require('./api/models/news');
 
-
-
-
-
-
+app.locals.moment = require('moment');
+app.locals.moment.lang('ru');
 
 // var address = process.env.MONGO_PORT_27017_TCP_ADDR || '127.0.0.1';
 // var port = process.env.MONGO_PORT_27017_TCP_PORT || '27017';
@@ -53,10 +48,6 @@ const News = require('./api/models/news');
 //
 // // Create the database connection
 // var connection = mongoose.createConnection(dbURI);
-
-
-
-
 
 mongoose.connect('mongodb://localhost:27017/myapi', { // proka4
     // useMongoClient: true
@@ -76,7 +67,7 @@ app.set('view engine', 'pug');
 
 app.use(morgan('dev'));
 // publicly available routes
-//app.use(express.static('uploads')); // url: http://localhost:3000/filename.jpg !!! no /uploads/!!!!
+// app.use(express.static('uploads')); // url: http://localhost:3000/filename.jpg !!! no /uploads/!!!!
 // app.use('/uploads', express.static('uploads')); // uploads/imgaddr.png
 app.use(express.static('static'));
 
@@ -114,45 +105,17 @@ app.get('/admin/*',function(req,res){
 //   res.redirect('/admin/static');
 // });
 
-
-
-
-
-
-
-
 // LANDING PAGE ======
 app.get('/', async (req, res) => {
   const content = await Content.findOne({ key: 'main_content' })
     .select('main about programs benefits prizes teachers contacts');
-  const reviews = await Review.find();
+  const reviews = await Review.find().sort({ 'order': -1 });
   const news = await News.find();
-
-  let data = { content, reviews, news };
-
-  console.log('===========================');
-  console.log('===========================');
-  console.log(news);
-  console.log('===========================');
-  console.log('===========================');
-
-
+  const data = { content, reviews, news };
   res.render('landing/index', data, function(err, html) {
     res.send(html);
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
