@@ -28,6 +28,7 @@ const userRoutes = require('./api/routes/user');
 const contentRoutes = require('./api/routes/content');
 const newsRoutes = require('./api/routes/news');
 const reviewRoutes = require('./api/routes/reviews');
+const faqRoutes = require('./api/routes/faq');
 
 // mongoose.Promise = Promise;
 mongoose.set('debug', true); // if - !prod
@@ -94,6 +95,7 @@ app.use('/user', userRoutes);
 app.use('/content', contentRoutes);
 app.use('/news', newsRoutes);
 app.use('/reviews', reviewRoutes);
+app.use('/faq', faqRoutes);
 
 // ADMIN PANEL ======
 app.get('/admin/*',function(req,res){
