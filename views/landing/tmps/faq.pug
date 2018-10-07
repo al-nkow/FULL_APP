@@ -1,7 +1,7 @@
 div(id="faq")
   each question, index in faq
     if index < 5
-      .card(data-toggle="collapse" data-target='#id'+question._id aria-expanded="true" aria-controls="collapseOne")
+      .card(class=(!index ? '' : 'collapsed') data-toggle="collapse" data-target='#id'+question._id aria-expanded="true" aria-controls="collapseOne")
         .q-header(id="headingOne")
           .question= question.question
         .collapse(class=(!index ? 'show' : '') id='id'+question._id aria-labelledby="headingOne" data-parent="#faq")
@@ -9,8 +9,8 @@ div(id="faq")
   div.rest-of-faq
     each question, index in faq
       if index > 4
-        .card(data-toggle="collapse" data-target='#id' + question._id aria-expanded="true" aria-controls="collapseOne")
+        .card.collapsed(data-toggle="collapse" data-target='#id' + question._id aria-expanded="true" aria-controls="collapseOne")
           .q-header(id="headingOne")
             .question= question.question
-          .collapse(class=(!index ? 'show' : '') id='id' + question._id aria-labelledby="headingOne" data-parent="#faq")
+          .collapse(id='id' + question._id aria-labelledby="headingOne" data-parent="#faq")
             .answer!= question.answer
