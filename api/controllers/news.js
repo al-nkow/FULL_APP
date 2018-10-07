@@ -33,7 +33,9 @@ exports.news_delete = async (req, res) => {
     const foundNews = await News.findById(req.params.newsId);
     await News.remove({ _id: req.params.newsId });
     if (foundNews && foundNews.image) {
-      await fs.unlink('static' + foundNews.image);
+      await fs.unlink('static' + foundNews.image, (err) => {
+        console.log('DELETE NEWS IMAGE ERROR: ', err);
+      });
     }
     return res.status(200).json({ message: 'News deleted' });
   } catch (err) {

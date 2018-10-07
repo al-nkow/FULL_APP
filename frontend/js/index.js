@@ -55,17 +55,4 @@ $(function() {
 
   openPayWin();
 
-  // review video controls
-  // const video = document.getElementById('insta-video');
-  // video.addEventListener('error', () => $('#insta-video-wrap').hide());
-  // $('#play-pause').on('click', () => {
-  //   if (video.paused) {
-  //     video.play();
-  //     $('.play-but').addClass('pause');
-  //   } else {
-  //     video.pause();
-  //     $('.play-but').removeClass('pause');
-  //   }
-  // });
-
 });

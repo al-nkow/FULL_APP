@@ -72,7 +72,9 @@ exports.review_delete = async (req, res) => {
     const foundReview = await Review.findById(req.params.reviewId);
     await Review.remove({ _id: req.params.reviewId });
     if (foundReview && foundReview.image) {
-      await fs.unlink('static' + foundReview.image);
+      await fs.unlink('static' + foundReview.image, (err) => {
+        console.log('DELETE REVIEW IMAGE ERROR: ', err);
+      });
     }
     return res.status(200).json({ message: 'Review deleted' });
   } catch (err) {

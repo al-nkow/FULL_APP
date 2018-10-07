@@ -5,7 +5,7 @@ div(id="faq")
         .q-header(id="headingOne")
           .question= question.question
         .collapse(class=(!index ? 'show' : '') id='id'+question._id aria-labelledby="headingOne" data-parent="#faq")
-          .answer= question.question
+          .answer!= question.answer
   div.rest-of-faq
     each question, index in faq
       if index > 4
@@ -13,4 +13,4 @@ div(id="faq")
           .q-header(id="headingOne")
             .question= question.question
           .collapse(class=(!index ? 'show' : '') id='id' + question._id aria-labelledby="headingOne" data-parent="#faq")
-            .answer= question.question
+            .answer!= question.answer

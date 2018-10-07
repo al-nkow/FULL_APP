@@ -5,6 +5,8 @@
 /tmp
 /out-tsc
 
+/static/uploads
+
 # dependencies
 /node_modules
 

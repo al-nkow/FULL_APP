@@ -552,11 +552,18 @@ html
             .news-slider
               .news-wrap.newsSiema
                 each newsItem in news
-                  a.news-item(href=newsItem.link target="_blank")
-                    img(src=newsItem.image)
-                    .news-body
-                      .news-date= moment(newsItem.date).format("DD MMMM YYYY, HH:MM")
-                      .news-title= newsItem.title
+                  if newsItem.link
+                    a.news-item(href=newsItem.link target="_blank")
+                      img(src=newsItem.image)
+                      .news-body
+                        .news-date= moment(newsItem.date).format("DD MMMM YYYY, HH:MM")
+                        .news-title= newsItem.title
+                  else
+                    .news-item
+                      img(src=newsItem.image)
+                      .news-body
+                        .news-date= moment(newsItem.date).format("DD MMMM YYYY, HH:MM")
+                        .news-title= newsItem.title
               .news-controls.news-prev
                 svg.slider-arr(viewBox="0 0 129 129")
                   g
