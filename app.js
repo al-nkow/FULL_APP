@@ -36,6 +36,7 @@ mongoose.set('debug', true); // if - !prod
 const Content = require('./api/models/content');
 const Review = require('./api/models/review');
 const News = require('./api/models/news');
+const Faq = require('./api/models/faq');
 
 app.locals.moment = require('moment');
 app.locals.moment.locale('ru');
@@ -107,17 +108,34 @@ app.get('/admin/*',function(req,res){
 //   res.redirect('/admin/static');
 // });
 
+
+
+
+
+
+
 // LANDING PAGE ======
 app.get('/', async (req, res) => {
   const content = await Content.findOne({ key: 'main_content' })
     .select('main about programs benefits prizes teachers contacts');
   const reviews = await Review.find().sort({ 'order': -1 });
   const news = await News.find();
-  const data = { content, reviews, news };
+  const faq = await Faq.find().select('_id answer question');
+  const data = { content, reviews, news, faq };
   res.render('landing/index', data, function(err, html) {
     res.send(html);
   });
 });
+
+
+
+
+
+
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

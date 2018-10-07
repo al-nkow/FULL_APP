@@ -9,6 +9,7 @@ const passportJWT = passport.authenticate('jwt', { session: false });
 
 router.post('/', passportJWT, FaqController.faq_create);
 router.get('/', passportJWT, FaqController.faq_get_all);
-// router.delete('/:orderId', checkAuth, OrdersController.orders_get_order);
+router.delete('/:faqId', passportJWT, FaqController.faq_delete);
+router.put('/:faqId', passportJWT, FaqController.faq_update);
 
 module.exports = router;

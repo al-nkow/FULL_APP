@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 // GET USERS LIST
 exports.users_get_user = async (req, res) => {
   try {
-    const users = await User.find(); // .select('product quantity _id')
+    const users = await User.find().select('name email _id');
     res.status(200).json({ users: users });
   } catch (err) {
     return res.status(500).json({ error: err });
@@ -15,7 +15,7 @@ exports.users_get_user = async (req, res) => {
 
 // SIGN UP USER
 exports.users_user_signup = async (req, res, next) => {
-  const { email, password } = req.body;
+  const { email, password, name } = req.body;
 
   const foundUser = await User.findOne({ email: email });
   if (foundUser) return res.status(409).json({ message: 'Email is already in use' });
@@ -26,7 +26,8 @@ exports.users_user_signup = async (req, res, next) => {
     const newUser = new User({
       _id: new mongoose.Types.ObjectId(),
       email: email,
-      password: hash
+      password: hash,
+      name: name
     });
 
     await newUser.save();
@@ -66,7 +67,8 @@ exports.users_user_login = async (req, res, next) => {
     message: 'Auth successful',
     token: token,
     refreshToken: refreshToken,
-    expires_in: decoded ? decoded.exp : ''
+    expires_in: decoded ? decoded.exp : '',
+    id: foundUser._id
   });
 };
 
@@ -140,6 +142,22 @@ exports.users_user_logout = async (req, res) => {
     await User.findByIdAndUpdate(reqTokenInfo.userId, {refreshToken: ''});
     res.status(200).json({ message: 'Token deleted' });
   } catch (err) {
+    return res.status(500).json({ error: err });
+  }
+};
+
+// CHANGE PASSWORD
+exports.users_user_change_password = async (req, res, next) => {
+  const { id, password, newpassword } = req.body;
+  const foundUser = await User.findById(id);
+  const isMatch = await foundUser.isValidPassword(password);
+  if (!isMatch) return res.status(400).json({ message: 'Forbidden' });
+  try {
+    const hash = await bcrypt.hash(newpassword, 10);
+    foundUser.password = hash;
+    await foundUser.save();
+    res.status(200).json({ message: 'Password updated' });
+  } catch(err) {
     return res.status(500).json({ error: err });
   }
 };
