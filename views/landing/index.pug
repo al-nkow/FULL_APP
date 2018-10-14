@@ -414,16 +414,9 @@ html
           .partners
             h3.text-center Партнёры проекта
             .logos
-              a.logo-item(href="http://vpfitness.ru/" target="_blank")
-                img(src="landing/img/partner1.png")
-              //a.logo-item(href="https://www.instagram.com/smilestudio_ss/" target="_blank")
-                img(src=require("./img/partner2.png"))
-              a.logo-item(href="http://mcpo-ostankino.ru/" target="_blank")
-                img(src="landing/img/partner3.png")
-              //a.logo-item(href="https://www.instagram.com/new_face.new_style/" target="_blank")
-                img(src=require("./img/partner4.png"))
-              a.logo-item(href="https://www.doctorfilatov.ru/" target="_blank")
-                img(src="landing/img/partner5.png")
+              each partner in partners
+                a.logo-item(href=partner.link target="_blank")
+                  img(src=partner.image)
       // =============== STEPS ===============
       .black-block
         .steps-block
@@ -618,8 +611,8 @@ html
                 .foot-link.scrollToTeachers Преподаватели
                 //.foot-link Советы от школы
                 .foot-link.scrollToActions Акции
-                a.foot-link(href="landing/docs/policy.pdf" target="_blank") Политика защиты и обработки<br/>персональных данных
-                a.foot-link(href="landing/docs/offer.pdf" target="_blank") Оферта
+                a.foot-link(href= docs.policy.link target="_blank") Политика защиты и обработки<br/>персональных данных
+                a.foot-link(href= docs.offer.link target="_blank") Оферта
             .col-md-4
               .foot-col
                 .foot-col-title Instagram

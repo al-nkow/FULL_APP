@@ -17,9 +17,7 @@ app.use(minifyHTML({
 
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-
 const path  = require('path');
-
 const mongoose = require('mongoose');
 
 const productRoutes = require('./api/routes/products');
@@ -30,6 +28,7 @@ const newsRoutes = require('./api/routes/news');
 const reviewRoutes = require('./api/routes/reviews');
 const faqRoutes = require('./api/routes/faq');
 const partnerRoutes = require('./api/routes/partners');
+const docRoutes = require('./api/routes/documents');
 
 // mongoose.Promise = Promise;
 mongoose.set('debug', true); // if - !prod
@@ -39,6 +38,7 @@ const Review = require('./api/models/review');
 const News = require('./api/models/news');
 const Faq = require('./api/models/faq');
 const Partners = require('./api/models/partner');
+const Doc = require('./api/models/document');
 
 app.locals.moment = require('moment');
 app.locals.moment.locale('ru');
@@ -100,6 +100,7 @@ app.use('/news', newsRoutes);
 app.use('/reviews', reviewRoutes);
 app.use('/faq', faqRoutes);
 app.use('/partners', partnerRoutes);
+app.use('/documents', docRoutes);
 
 // ADMIN PANEL ======
 app.get('/admin/*',function(req,res){
@@ -119,7 +120,12 @@ app.get('/', async (req, res) => {
   const news = await News.find();
   const faq = await Faq.find().select('_id answer question');
   const partners = await Partners.find();
-  const data = { content, reviews, news, faq, partners };
+  const docsList = await Doc.find();
+
+  const docs = { policy: {}, offer: {}};
+  if (docsList) docsList.forEach(item => docs[item.name] = item);
+
+  const data = { content, reviews, news, faq, partners, docs };
   res.render('landing/index', data, function(err, html) {
     res.send(html);
   });
