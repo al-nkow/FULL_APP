@@ -6,6 +6,8 @@ const contentSchema = mongoose.Schema({
   main: {
     info: String,
     sub: String,
+    sliderLeft: String,
+    sliderRight: String,
   },
   about: {
     info: String
