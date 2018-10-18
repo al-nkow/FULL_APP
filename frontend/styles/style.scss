@@ -1780,9 +1780,14 @@
 }
 .programs {
   margin-top: 60px;
-  margin-bottom: -220px;
   position: relative;
   z-index: 2;
+  &.last {
+    margin-bottom: -220px;
+    @media (max-width: 991px) {
+     margin-top: 5px;
+    }
+  }
 }
 .program-item {
   background: $bgLight;

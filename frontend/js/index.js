@@ -50,6 +50,10 @@ $(function() {
       $('#program2').click();
     } else if (params.pay === '3') {
       $('#program3').click();
+    } else if (params.pay === '4') {
+      $('#program4').click();
+    } else if (params.pay === '5') {
+      $('#program5').click();
     }
   }
 

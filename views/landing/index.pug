@@ -484,6 +484,7 @@ html
                     id="program1"
                     data-option=content.programs.program1.name
                     data-price=content.programs.program1.price
+                    onclick="if (fbq) console.log('>>>>', fbq)"
                     ) Подать заявку
                   .program-info-link(data-toggle="modal" data-target="#payMethodsModal") способы оплаты
               .col-lg-4
@@ -503,6 +504,7 @@ html
                     id="program2"
                     data-option=content.programs.program2.name
                     data-price=content.programs.program2.price
+                    onclick="if (fbq) fbq('track', 'InitiateCheckout')"
                     ) Подать заявку
                   .program-info-link(data-toggle="modal" data-target="#payMethodsModal") способы оплаты
               .col-lg-4
@@ -521,9 +523,63 @@ html
                     id="program3"
                     data-option=content.programs.program3.name
                     data-price=content.programs.program3.price
+                    onclick="if (fbq) fbq('track', 'InitiateCheckout')"
                     ) Подать заявку
                   .program-info-link(data-toggle="modal" data-target="#payMethodsModal") способы оплаты
+            .row.programs.last
+              .col-lg-6
+                .program-item
+                  .program-head
+                    .program-icon
+                      svg(viewBox="0 0 19.481 19.481")
+                        g
+                          path(d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z")
+                    .program-name Lady GOLD
+                  .program-body
+                    .program-point Мотивационная поддержка в чате и личная поддержка от мотиваторов и психологов проекта
+                    .program-point Подбор меню и тренировок. Индивидуальный подход
+                    .program-point Личная консультация диетолога
+                    .program-point Личная консультация астролога
+                    .program-point Личная консультация нумеролога
+                    .program-point Прослушивание лекций: «Секреты питания для стройности», «Сама себе тренер. Составление эффективных тренировок для дома/зала», «Психология отношений (любовь,работа,семья,дети)», «Планирование и достижение целей», «Эзотерика. Применение в личной жизни», «Сексология. Секреты ниже пояса»
+                    .program-point Розыгрыш призов
+                    .program-price 15 000 <span class="rub">₽</span>
+                  .button.point.priceBtn(
+                  id="program4"
+                  data-option="Lady GOLD"
+                  data-price="15000"
+                  onclick="if (fbq) fbq('track', 'InitiateCheckout')"
+                  ) Подать заявку
+                  .program-info-link(data-toggle="modal" data-target="#payMethodsModal") способы оплаты
+              .col-lg-6
+                .program-item
+                  .program-head
+                    .program-icon
+                      svg(viewBox="0 0 19.481 19.481")
+                        g
+                          path(d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z")
+                    .program-name Lady GOLD PREMIUM
+                  .program-body
+                    .program-point Мотивационная поддержка в чате и личная поддержка от мотиваторов, психологов, диетологов и тренеров проекта
+                    .program-point Подбор меню и тренировок. Индивидуальный подход
+                    .program-point Консультация сексолога
+                    .program-point Курс личных консультации психолога(10ч)
+                    .program-point Личная консультация диетолога
+                    .program-point Курс личных консультаций астролога
+                    .program-point Личная консультация нумеролога
+                    .program-point Прослушивание лекций - «Секреты питания для стройности», «Сама себе тренер.Составление эффективных тренировок для дома/зала», «Психология отношений (любовь, работа, семья, дети)», «Планирование и достижение целей», «Эзотерика. Применение в личной жизни», «Сексология. Секреты ниже пояса», сексуальные практики и тренировки со специалистом по интимной гимнастике.
+                    .program-point Создание личного блога в Инстаграмм, обучение открытию своего интернет-бизнеса
+                    .program-point Розыгрыш призов
+                    .program-price 21 000 <span class="rub">₽</span>
+                  .button.point.priceBtn(
+                  id="program5"
+                  data-option="Lady GOLD PREMIUM"
+                  data-price="21000"
+                  onclick="if (fbq) fbq('track', 'InitiateCheckout')"
+                  ) Подать заявку
+                  .program-info-link(data-toggle="modal" data-target="#payMethodsModal") способы оплаты
                   .program-ribbon Супер!
+
       // =============== FAME ===============
       .black-block
         .fame-block#fame
