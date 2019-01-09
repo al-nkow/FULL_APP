@@ -38,7 +38,7 @@ const Payment = () => {
       return false;
     }
 
-    let description = 'Программа "' + program + '" ' + price + 'руб. 11 сезон. ' +
+    let description = 'Программа "' + program + '" ' + price + 'руб. 13 сезон. ' +
       'Участница: ' + fname + ' ' + lname + ', тел.' + phone + ', email: ' + email;
     if (promo) description = description + ', промокод: ' + promo;
 
