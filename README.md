@@ -25,12 +25,3 @@
 2. npm run front - to run landing page (watch mode)
 
 !!! All images you need in style.scss - put into frontend/img
-
-
-
-#### Add admin panel
-````
-1. admin - npm run build
-2. copy files into static/admin/
-3. index.html: add /admin/ to all paths
-````

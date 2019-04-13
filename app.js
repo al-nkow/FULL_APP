@@ -99,9 +99,9 @@ app.use('/partners', partnerRoutes);
 app.use('/documents', docRoutes);
 
 // ADMIN PANEL ======
-app.get('/admin/*',function(req,res){
-  res.sendFile(path.join(__dirname+'/static/admin/index.html'));
-});
+// app.get('/admin/*',function(req,res){
+//   res.sendFile(path.join(__dirname+'/static/admin/index.html'));
+// });
 
 // Redirect paths to FONTS (static with admin/static) - react app
 // app.get('/static/*',function(req,res){

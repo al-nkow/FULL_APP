@@ -119,7 +119,7 @@ html
               //.main-school Международный онлайн конкурс преображения, в котором вы приобретёте не только красивое тело, но и новый взгляд на жизнь
               .main-school= content.main.info
               .main-but-wrap
-                .s-but.s-but_main.scrollToPay= content.main.sliderLeft
+                a.s-but.s-but_main.scrollToPay(href="https://api.whatsapp.com/send?phone=79119838780" target="_blank")= content.main.sliderLeft
                 .mbw-text
                   span(style="margin-right: 5px;")= content.main.sliderRight
                   svg.mbw-arr(viewBox="0 0 129 129")
@@ -142,7 +142,7 @@ html
         .container
           .company-name Prokaчshow
           .main-mobile-title= content.main.info
-          .s-but.s-but_main.scrollToPay Я готова меняться!
+          a.s-but.s-but_main(href="https://api.whatsapp.com/send?phone=79119838780" target="_blank")= content.main.sliderLeft
       // =============== ABOUT ===============
       .white-block
         include tmps/wave

@@ -397,12 +397,13 @@
   margin-left: 20px;
 }
 .s-but {
+  text-decoration: none!important;
   transition: all 0.1s linear;
   cursor: pointer;
   display: inline-block;
   padding: 15px 25px;
   background: #ffa960;
-  color: #ffffff;
+  color: #ffffff!important;
   border-radius: 25px;
   font-size: 14px;
   font-weight: 300;
