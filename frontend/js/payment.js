@@ -58,7 +58,7 @@ const Payment = () => {
 
   function callPay(fname, lname, phone, email, promo, discount) {
 
-    const cost = discount ? price * 0.85 : price;
+    const cost = discount ? price * 0.8 : price;
 
     let description = 'Программа "' + program + '" ' + cost + 'руб. 13 сезон. ' +
       'Участница: ' + fname + ' ' + lname + ', тел.' + phone + ', email: ' + email;
