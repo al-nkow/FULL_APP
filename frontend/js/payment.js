@@ -38,12 +38,34 @@ const Payment = () => {
       return false;
     }
 
-    let description = 'Программа "' + program + '" ' + price + 'руб. 13 сезон. ' +
+    fetch('/member/check', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email }),
+    }).then((resp) => {
+      const { status } = resp;
+      if (status === 200) {
+        callPay(fname, lname, phone, email, promo, true);
+      } else {
+        callPay(fname, lname, phone, email, promo);
+      }
+    })
+    .catch((error) => { console.log('GET MEMBER BY EMAIL ERROR:', error); });
+  });
+
+  function callPay(fname, lname, phone, email, promo, discount) {
+
+    const cost = discount ? price * 0.85 : price;
+
+    let description = 'Программа "' + program + '" ' + cost + 'руб. 13 сезон. ' +
       'Участница: ' + fname + ' ' + lname + ', тел.' + phone + ', email: ' + email;
     if (promo) description = description + ', промокод: ' + promo;
 
     let payControls = {
-      amount: price,
+      amount: cost,
       currency: 'RUB',
       order_number: '',
       description: description
@@ -57,7 +79,7 @@ const Payment = () => {
       console.log('ERROR: ', order);
     };
     ipayCheckout(payControls, cbSuccess, cbError);
-  });
+  }
 };
 
 export default Payment;

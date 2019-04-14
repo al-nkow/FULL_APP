@@ -486,7 +486,7 @@ html
                     id="program1"
                     data-option=content.programs.program1.name
                     data-price=content.programs.program1.price
-                    onclick="if (fbq) console.log('>>>>', fbq)"
+                    onclick="if (fbq) fbq('track', 'InitiateCheckout')"
                     ) Подать заявку
                   .program-info-link(data-toggle="modal" data-target="#payMethodsModal") способы оплаты
               .col-lg-4
