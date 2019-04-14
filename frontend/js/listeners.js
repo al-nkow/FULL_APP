@@ -1,6 +1,10 @@
 import $ from 'jquery';
+import RegValidate from './regValidate';
+import Toast from './toaster';
 
 const Listeners = () => {
+
+  const toast = new Toast();
 
   const scrollToElement = (id, duration) => {
     $('html, body').animate({
@@ -33,6 +37,49 @@ const Listeners = () => {
   });
 
   $('.jsMobMenuItem').on('click', () => $('#mobMenu').toggleClass('visible'));
+
+
+  let regFormValidation = new RegValidate();
+  regFormValidation.init();
+
+  $('#submitRegistrationForm').on('click', () => {
+    if (!regFormValidation.form.valid) return;
+    let firstName = $('#rfFirstName').val();
+    let lastName = $('#rfLastName').val();
+    let phone = $('#rfPhone').val();
+    let email = $('#rfEmail').val();
+
+    const data = { firstName, lastName, phone, email };
+
+    addMember(data);
+
+    function addMember(data) {
+      const url = '/member';
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+      })
+        .then((resp) => {
+          const { status } = resp;
+          if (status === 409) {
+            toast.error('Пользователь с таким email уже зарегистрирован');
+          } else if (status === 201) {
+            $('#registerModal').modal('hide');
+            toast.success('Регистрация успешно завершена');
+          }
+          // return resp.json();
+        })
+        // .then((data) => {})
+        .catch((error) => {
+          console.log('ADD MEMBER ERROR:', error);
+          toast.error('Ошибка сервера');
+        });
+    }
+  });
 
 };
 

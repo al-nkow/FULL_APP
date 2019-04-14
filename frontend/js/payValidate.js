@@ -1,5 +1,9 @@
 import $ from 'jquery';
 
+const reLetters = /^[a-zA-Zа-яА-Я\s]+$/;
+const reNumbers = /^[0-9| ()+-]*$/;
+const reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 export default class Validation {
 
   constructor() {
@@ -34,19 +38,19 @@ export default class Validation {
 
   init() {
     $('#pieFirstName').on('change', (e) => {
-      this.changeInputHandler.call(this, e, /^[a-zA-Zа-яА-Я\s]+$/, 'fname');
+      this.changeInputHandler.call(this, e, reLetters, 'fname');
     });
 
     $('#pieLastName').on('change', (e) => {
-      this.changeInputHandler.call(this, e, /^[a-zA-Zа-яА-Я\s]+$/, 'lname');
+      this.changeInputHandler.call(this, e, reLetters, 'lname');
     });
 
     $('#piePhone').on('change', (e) => {
-      this.changeInputHandler.call(this, e, /^[0-9| ()+-]*$/, 'phone');
+      this.changeInputHandler.call(this, e, reNumbers, 'phone');
     });
 
     $('#pieEmail').on('change', (e) => {
-      this.changeInputHandler.call(this, e, /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, 'email');
+      this.changeInputHandler.call(this, e, reEmail, 'email');
     });
 
     $('#pieOffer').on('change', () => this.checkFormValidity());

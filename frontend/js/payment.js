@@ -1,8 +1,8 @@
 import $ from 'jquery';
-import Validation from './validation';
+import PayValidate from './payValidate';
 
 const Payment = () => {
-  let payFormValidation = new Validation();
+  let payFormValidation = new PayValidate();
   payFormValidation.init();
 
   const ipay = new IPAY({ api_token: process.env.SBER_TOKEN });

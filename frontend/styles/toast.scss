@@ -1,0 +1,36 @@
+@import 'breakpoints';
+
+.toast {
+  padding: 20px 40px;
+  background: #171717;
+  border-radius: 4px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  z-index: 10000;
+  max-width: 400px;
+  animation: slide-up 0.4s ease;
+  &.success {
+    color: #71e671;
+  }
+  &.error {
+    color: #f74440;
+  }
+  @media ($bpxs) {
+    max-width: inherit;
+    left: 20px;
+    padding: 10px 20px;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
