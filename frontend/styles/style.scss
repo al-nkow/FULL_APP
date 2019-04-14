@@ -2632,5 +2632,34 @@ iframe.presentation {
   //}
 }
 
+.discount-action {
+  text-shadow: 0 0 3px rgba(0,0,0,0.3);
+  font-family: Bebas_Neue_Bold,Helvetica,sans-serif;
+  font-size: 32px;
+  color: #ffffff;
+  position: absolute;
+  top: 44px;
+  left: 0px;
+  z-index: 1;
+  @media ($bpmd) {
+    top: 28px;
+    font-size: 28px;
+  }
+  @media ($bpsm) {
+    top: 13px;
+    font-size: 26px;
+  }
+  @media ($bpxs) {
+    top: 300px;
+    left: 10px;
+    right: 10px;
+    text-align: center;
+    font-size: 22px;
+  }
+  @media (max-width: 320px) {
+    top: 250px;
+  }
+}
+
 
 
