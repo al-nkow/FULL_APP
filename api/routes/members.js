@@ -7,6 +7,7 @@ const passport = require('passport');
 const passportConf = require('../../passport');
 const passportJWT = passport.authenticate('jwt', { session: false });
 
+router.get('/', passportJWT, MembersController.get_members);
 router.post('/', MembersController.member_register);
 router.post('/check', MembersController.member_by_email);
 

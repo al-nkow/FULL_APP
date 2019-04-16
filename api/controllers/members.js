@@ -24,6 +24,7 @@ exports.member_register = async (req, res) => {
   }
 };
 
+// FIND MEMBER BY EMAIL
 exports.member_by_email = async (req, res) => {
   const { email } = req.body;
   const foundMember = await Member.findOne({ email: email });
@@ -33,4 +34,14 @@ exports.member_by_email = async (req, res) => {
   });
 
   return res.status(404).json({ error: 'user not found' });
+};
+
+// GET MEMBERS LIST
+exports.get_members = async (req, res) => {
+  try {
+    const members = await Member.find().select('_id email firstName lastName phone');
+    res.status(200).json({ members: members });
+  } catch (err) {
+    return res.status(500).json({ error: err });
+  }
 };
