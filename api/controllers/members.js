@@ -45,3 +45,13 @@ exports.get_members = async (req, res) => {
     return res.status(500).json({ error: err });
   }
 };
+
+// DELETE MEMBER
+exports.member_delete = async (req, res) => {
+  try {
+    await Member.remove({ _id: req.params.memberId });
+    return res.status(200).json({ message: 'Member deleted' });
+  } catch (err) {
+    return res.status(500).json({ error: err });
+  }
+};
