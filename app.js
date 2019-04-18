@@ -113,7 +113,7 @@ app.use('/member', memberRoutes);
 // LANDING PAGE ======
 app.get('/', async (req, res) => {
   const content = await Content.findOne({ key: 'main_content' })
-    .select('main about programs benefits prizes teachers contacts');
+    .select('season main about programs benefits prizes teachers contacts');
   const reviews = await Review.find().sort({ 'order': -1 });
   const news = await News.find();
   const faq = await Faq.find().select('_id answer question');

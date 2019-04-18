@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const contentSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   key: String,
+  season: String,
   main: {
     info: String,
     sub: String,

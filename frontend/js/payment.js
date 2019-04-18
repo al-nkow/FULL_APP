@@ -9,11 +9,13 @@ const Payment = () => {
 
   let price = 0;
   let program = '';
+  let season = '';
   let iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
   $('.priceBtn').on('click', function (e) {
     price = e.target.getAttribute('data-price');
     program = e.target.getAttribute('data-option');
+    season = e.target.getAttribute('data-season');
     $('#priceModalLabel').text(program);
     $('#priceModal').modal('show');
     if (iOS) document.body.style.position = 'fixed';
@@ -60,7 +62,7 @@ const Payment = () => {
 
     const cost = discount ? price * 0.8 : price;
 
-    let description = 'Программа "' + program + '" ' + cost + 'руб. 13 сезон. ' +
+    let description = 'Программа "' + program + '" ' + cost + 'руб. ' + season + ' сезон. ' +
       'Участница: ' + fname + ' ' + lname + ', тел.' + phone + ', email: ' + email;
     if (promo) description = description + ', промокод: ' + promo;
 
