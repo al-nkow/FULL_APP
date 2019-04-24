@@ -28,6 +28,7 @@ const faqRoutes = require('./api/routes/faq');
 const partnerRoutes = require('./api/routes/partners');
 const docRoutes = require('./api/routes/documents');
 const memberRoutes = require('./api/routes/members');
+const instaRoutes = require('./api/routes/instagram')
 
 // mongoose.Promise = Promise;
 mongoose.set('debug', true); // if - !prod
@@ -99,6 +100,7 @@ app.use('/faq', faqRoutes);
 app.use('/partners', partnerRoutes);
 app.use('/documents', docRoutes);
 app.use('/member', memberRoutes);
+app.use('/instagram', instaRoutes);
 
 // ADMIN PANEL ======
 // app.get('/admin/*',function(req,res){

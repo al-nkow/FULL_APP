@@ -3,11 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/style.scss';
 import 'ubuntu-fontface/_ubuntu.scss'
 import $ from 'jquery';
-import Instafeed from 'instafeed.js';
 import Payment from './payment';
 import Sliders from './sliders';
 import Listeners from './listeners';
 import Reviews from './reviews';
+import Instagram from './instagram';
 
 $(function() {
 
@@ -18,21 +18,9 @@ $(function() {
   Listeners();
   Payment();
   Reviews();
+  Instagram();
 
   $('#currentYear').text(new Date().getFullYear());
-
-  const feed = new Instafeed({
-    get: 'user',
-    userId: '1248861449',
-    limit: 9,
-    clientId: process.env.INSTAGRAM_CLIENT_ID,
-    accessToken: process.env.INSTAGRAM_TOKEN,
-    template: '<a class="insta-link" href="{{link}}" target="_blank"><img src="{{image}}" /></a>',
-    resolution: 'thumbnail',
-    links: true,
-  });
-
-  feed.run();
 
   function openPayWin() {
     let url = window.location.href;
