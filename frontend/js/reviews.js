@@ -1,7 +1,7 @@
 // Get media_id: https://api.instagram.com/oembed/?url=__paste_url_here__
 
 const Reviews = () => {
-  const accessToken = process.env.INSTAGRAM_TOKEN;
+  // const accessToken = process.env.INSTAGRAM_TOKEN;
   // const seasons = [
   //   { mediaId: '1765397805398784524_1248861449', container: 'comments9'},
   //   { mediaId: '1681838738404005685_1248861449', container: 'comments8'},
