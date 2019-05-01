@@ -8,6 +8,7 @@ import Sliders from './sliders';
 import Listeners from './listeners';
 import Reviews from './reviews';
 import Instagram from './instagram';
+import Winners from './Winners';
 
 $(function() {
 
@@ -19,6 +20,7 @@ $(function() {
   Payment();
   Reviews();
   Instagram();
+  Winners();
 
   $('#currentYear').text(new Date().getFullYear());
 

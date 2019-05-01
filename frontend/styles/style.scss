@@ -1,6 +1,7 @@
 @import 'colors';
 @import 'main';
 @import 'breakpoints';
+@import 'modal';
 
 @mixin gradient {
   background-image: -moz-linear-gradient( 22deg, rgb(250,127,76) 0%, rgb(251,51,96) 100%);

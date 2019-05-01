@@ -2,6 +2,16 @@ const request = require('request');
 const Instagram = require('../models/instagram');
 const mongoose = require('mongoose');
 
+// GET TOKEN
+exports.get_token = async (req, res) => {
+  try {
+    const tokenObj = await Instagram.findOne({ recType: 'access-token' });
+    res.status(200).json({ token: tokenObj.token });
+  } catch (err) {
+    return res.status(500).json({ error: err });
+  }
+};
+
 // GET LATEST POSTS
 exports.get_posts = async (req, res) => {
   const tokenObj = await Instagram.findOne({ recType: 'access-token' });

@@ -5,6 +5,7 @@ const Sliders = () => {
   try {
     const newsSiema = new Siema({
       selector: '.newsSiema',
+      startIndex: 0,
       perPage: {
         400: 1,
         600: 2,

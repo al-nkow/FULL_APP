@@ -1,0 +1,116 @@
+.cm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 10000;
+}
+.cm-modal {
+  position: absolute;
+  padding: 90px 0 20px 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  width: 90%;
+  height: 90%;
+  max-width: 700px;
+  max-height: 700px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  .modal-wave {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 25%;
+  }
+  .mod-head {
+    padding: 20px 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .carousel-control-prev {
+    cursor: pointer;
+    top: 210px;
+    left: 0;
+    margin-left: 20px;
+    transition: all 0.2s linear;
+    width: 80px;
+    height: 80px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 20px rgba(0,0,0,.5);
+    .slider-arr {
+      margin-left: -4px;
+    }
+    &:focus {
+      opacity: 0.5;
+    }
+    &:hover {
+      opacity: 1;
+    }
+    @media (max-width: 400px) {
+      top: 20%;
+      width: 60px;
+      height: 60px;
+      margin-right: 0;
+      right: auto;
+      left: 0;
+    }
+  }
+  .carousel-control-next {
+    cursor: pointer;
+    top: 210px;
+    right: 0;
+    margin-right: 30px;
+    transition: all 0.2s linear;
+    width: 80px;
+    height: 80px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 20px rgba(0,0,0,.5);
+    .slider-arr {
+      margin-right: -4px;
+    }
+    &:focus {
+      opacity: 0.5;
+    }
+    &:hover {
+      opacity: 1;
+    }
+    @media (max-width: 400px) {
+      top: 20%;
+      width: 60px;
+      height: 60px;
+      margin-left: 0;
+      left: auto;
+      right: 0;
+    }
+  }
+}
+.cm-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background: rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 100;
+}
+.cm-close-btn:hover {
+  background: rgba(0,0,0,0.6);
+}
+.cm-slider {
+  text-align: center;
+  overflow: auto;
+  height: 100%;
+  img {
+    height: 100%;
+  }
+}
