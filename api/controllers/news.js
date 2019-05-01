@@ -50,7 +50,11 @@ exports.news_update = async (req, res) => {
   if (req.file && req.file.filename) {
     const foundNews = await News.findById(id);
     if (foundNews && foundNews.image) {
-      await fs.unlink('static' + foundNews.image);
+      try {
+        await fs.unlink('static' + foundNews.image);
+      } catch (err) {
+        console.log('NEWS UPDATE - UNLINK ERROR', err);
+      }
     }
   }
   const updates = {...req.body};
